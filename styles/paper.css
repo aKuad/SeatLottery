@@ -11,29 +11,30 @@
   margin: 0 auto 1cm auto;
   border: none;
   outline: none;
-  border-bottom: 3pt solid hsl(0, 0%, 40%);
+  border-bottom: 2pt solid hsl(0, 0%, 40%);
   border-radius: 0;
 
   text-align: center;
   font-size: 2rem;
   line-height: 1.5em;
 }
-@media print {
-  .doc-title:empty {
-    display: none;
-  }
-}
 
 .doc-desc {
+  /* display: inline-block; */
   display: block;
   border: none;
-  border-bottom: 3pt solid hsl(0, 0%, 40%);
+  border-bottom: 2pt solid hsl(0, 0%, 40%);
   border-radius: 0;
 
   font-size: 1rem;
 }
-.doc-desc:empty {
-  display: none;
+@media print {
+  .doc-title:placeholder-shown {
+    display: none;
+  }
+  .doc-desc:placeholder-shown {
+    display: none;
+  }
 }
 
 .doc-table {
