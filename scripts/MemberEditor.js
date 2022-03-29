@@ -48,6 +48,7 @@ class MemberEditor {
       }
     }
     this.obj_ele.addEventListener("change", {"getter": this.getMembersArray, "obj_ele": this.obj_ele, "handleEvent": handle});
+    target_ele.innerText = "-";
   }
 
   /**
@@ -64,5 +65,6 @@ class MemberEditor {
       }
     }
     this.obj_ele.addEventListener("change", {"getter": this.getMembersArray, "obj_ele": this.obj_ele, "handleEvent": handle});
+    target_ele.innerText = "-";
   }
 }

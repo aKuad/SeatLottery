@@ -117,6 +117,7 @@ class SeatEditor {
     }
     this.print_ele.addEventListener("click",       {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
     this.print_ele.addEventListener("contextmenu", {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
+    this.print_ele.dispatchEvent(new Event("click"));
   }
 
   /**
@@ -130,6 +131,7 @@ class SeatEditor {
     }
     this.print_ele.addEventListener("click",       {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
     this.print_ele.addEventListener("contextmenu", {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
+    this.print_ele.dispatchEvent(new Event("click"));
   }
 
   /**
