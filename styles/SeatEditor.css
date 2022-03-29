@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/**
+ * seat.css
+ *
+ * Author: aKuad
+ */
+
+.seat-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.seat-cell {
+  max-width: 4cm;
+  flex-grow: 1;
+  cursor: pointer;
+  border-right: 4px solid hsl(0, 0%, 40%);
+  border-bottom: 4px solid hsl(0, 0%, 40%);
+  margin: 1mm;
+
+  text-align: center;
+}
+.seat-cell-edit {
+  line-height: 2em;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.seat-cell-result {
+  padding: 1em 0 0.5em 0;
+  box-sizing: content-box;
+  min-height: 2em;
+  cursor: default;
+  font-size: 1rem;
+}
+
+.seat-cell-normal {
+  background-color: hsl(240, 100%, 90%);
+}
+.seat-cell-normal::before {
+  content: "一般";
+}
+.seat-cell-priority {
+  background-color: hsl(120, 100%, 90%);
+}
+.seat-cell-priority::before {
+  content: "優先";
+}
+.seat-cell-unused {
+  background-color: hsl(0, 0%, 60%);
+}
+.seat-cell-unused::before {
+  content: "未";
+}
+.seat-cell-none {
+  background-color: hsl(0, 0%, 100%);
+}
+.seat-cell-none::before {
+  content: "無";
+}

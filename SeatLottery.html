@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/InputCheck.css">
+    <link rel="stylesheet" href="./styles/SeatEditor.css">
+    <link rel="stylesheet" href="./styles/paper.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <script type="text/javascript" charset="UTF-8" src="./scripts/InputCheck.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/SeatEditor.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/parse_members.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/array_shuffle.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/print_seatresult.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/main.js"></script>
+  </head>
+
+  <body>
+    <div id="view-seatset">
+      <div class="info-container">
+        座席レイアウト、登録メンバーを編集してください。
+      </div>
+      <div class="info-container" style="text-align: center;">
+        <input type="button" class="info-button" id="ctrl-generate" value="座席表を生成" disabled>
+      </div>
+      <div class="info-container" style="text-align: center;">
+        <div class="info-label">メンバー</div>
+        <textarea id="input-members" placeholder="1,鈴木 太郎,スズキ タロウ,0"></textarea>
+      </div>
+      <div class="info-container">
+        <div class="info-label">座席数 (横 x 縦)</div>
+        <div style="text-align: center;">
+          <input type="number" id="input-seats-x" min="1" max="20" value="6"> x
+          <input type="number" id="input-seats-y" min="1" max="20" value="5">
+        </div>
+      </div>
+      <div id="seat-edit"></div>
+      <div class="doc-table">教卓</div>
+    </div>
+
+    <div id="view-result" style="display: none;">
+      <div class="info-container no-print">必要に応じ、印刷ダイアログから拡大率、用紙方向などを調整してください。</div>
+      <div class="info-container no-print">Excel などでレイアウトを独自に作成しますか？「CSVエクスポート」をご活用ください。</div>
+      <div class="info-container no-print" style="text-align: center;">
+        <input type="button" class="info-button" id="ctrl-back" value="前へ戻る">
+        <input type="button" class="info-button" value="印刷" onclick="window.print();">
+        <a class="info-button" id="ctrl-export" href="" download="Seat.csv">CSVエクスポート</a>
+      </div>
+      <input type="text" class="doc-title" placeholder="タイトル入力 (任意)">
+      <div id="seat-result"></div>
+      <div class="doc-table">教卓</div>
+      <input type="text" class="doc-desc" placeholder="備考入力 (任意)">
+    </div>
+  </body>
+</html>

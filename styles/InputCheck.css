@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/**
+ * input.css
+ *
+ * Author: aKuad
+ */
+
+#form-member {
+  resize: vertical;
+  height: 4em;
+}
+
+.input-view-normal {
+  border: none;
+  border-bottom: 2pt solid hsl(0, 0%, 70%);
+  outline: none;
+  border-radius: 0;
+}
+.input-view-normal:focus {
+  border-bottom-color: hsl(240, 100%, 70%);
+}
+
+.input-view-invalid {
+  border-bottom-color: hsl(0, 100%, 70%);
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
