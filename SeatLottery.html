@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles/base.css">
     <script type="text/javascript" charset="UTF-8" src="./scripts/InputCheck.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/SeatEditor.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="./scripts/parse_members.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/MemberEditor.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/array_shuffle.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/print_seatresult.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/main.js"></script>
@@ -18,6 +18,27 @@
     <div id="view-seatset">
       <div class="info-container">
         座席レイアウト、登録メンバーを編集してください。
+      </div>
+      <div class="info-container">
+        <div class="info-label">ステータス</div>
+        <table class="table-bodybase">
+          <tbody>
+            <tr>
+              <td class="table-cellbase table-rborder">一般</td>
+              <td class="table-cellbase">座席数:</td>
+              <td class="table-cellbase table-rborder" id="stat-normal-seats">-</td>
+              <td class="table-cellbase">メンバー数:</td>
+              <td class="table-cellbase" id="stat-normal-members">-</td>
+            </tr>
+            <tr>
+              <td class="table-cellbase table-rborder">優先</td>
+              <td class="table-cellbase">座席数:</td>
+              <td class="table-cellbase table-rborder" id="stat-priority-seats">-</td>
+              <td class="table-cellbase">メンバー数:</td>
+              <td class="table-cellbase" id="stat-priority-members">-</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="info-container" style="text-align: center;">
         <input type="button" class="info-button" id="ctrl-generate" value="座席表を生成" disabled>

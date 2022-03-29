@@ -76,7 +76,7 @@ class SeatEditor {
   }
 
   /**
-   * Return seat type array
+   * Return seat type matrix array
    *
    * @returns {Array}
    */
@@ -104,6 +104,32 @@ class SeatEditor {
       count[cells[i].seatType]++;
     }
     return {"normal": count[0], "priority": count[1], "unused": count[2], "none": count[3]};
+  }
+
+  /**
+   * Attach auto refresh normal seat counter
+   *
+   * @param {object} target_ele Print target HTMLElement
+   */
+  attachSeatCounterNormal(target_ele) {
+    function handle() {
+      target_ele.innerText = this.getter().normal;
+    }
+    this.print_ele.addEventListener("click",       {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
+    this.print_ele.addEventListener("contextmenu", {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
+  }
+
+  /**
+   * Attach auto refresh normal seat counter
+   *
+   * @param {object} target_ele Print target HTMLElement
+   */
+  attachSeatCounterPriority(target_ele) {
+    function handle() {
+      target_ele.innerText = this.getter().priority;
+    }
+    this.print_ele.addEventListener("click",       {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
+    this.print_ele.addEventListener("contextmenu", {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
   }
 
   /**

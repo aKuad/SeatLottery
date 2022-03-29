@@ -18,6 +18,44 @@ body {
   margin: 1cm;
 }
 
+@media print {
+  body {
+    position: relative;
+  }
+  #view-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+/* Stat view */
+.table-bodybase {
+  display: block;
+  border: none;
+  margin: 0 auto;
+}
+
+.table-cellbase {
+  border: none;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.table-rborder {
+  border-right: 1px solid #000;
+}
+
+#stat-normal-seats,
+#stat-normal-members,
+#stat-priority-seats,
+#stat-priority-members {
+  width: 3em;
+  text-align: right;
+}
+
 
 /* Input field */
 .info-button {

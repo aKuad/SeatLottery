@@ -15,7 +15,8 @@ window.onload = function() {
   new InputCheck(document.querySelector("#input-seats-x"), "number");
   new InputCheck(document.querySelector("#input-seats-y"), "number");
 
-  // Seat editing object create
+  // Editing object create
+  let membereditor = new MemberEditor(document.querySelector("#input-members"));
   let seateditor = new SeatEditor(document.querySelector("#seat-edit"),
                                   document.querySelector("#input-seats-x").value,
                                   document.querySelector("#input-seats-y").value);
@@ -26,6 +27,12 @@ window.onload = function() {
     if(0 < this.value) { seateditor.modifyHeight(this.value); }
   });
 
+  // Status view
+  seateditor.attachSeatCounterNormal(document.querySelector("#stat-normal-seats"));
+  seateditor.attachSeatCounterPriority(document.querySelector("#stat-priority-seats"));
+  membereditor.attachMemberCounterNormal(document.querySelector("#stat-normal-members"));
+  membereditor.attachMemberCounterPriority(document.querySelector("#stat-priority-members"));
+
   /**
    * Check all fields are filled completely
    *
@@ -33,24 +40,27 @@ window.onload = function() {
    */
   function isAllFieldsValid() {
     let seats = seateditor.getSeatCount();
-    let members = parse_members(document.querySelector("#input-members").value);
+    let members = membereditor.getMembersArray();
+    if(members == null) { return false; }
     return document.querySelector("#input-members").isValid &&
            document.querySelector("#input-seats-x").isValid &&
            document.querySelector("#input-seats-y").isValid &&
-           members.normal <= seats.normal &&
-           members.priority <= seats.priority;
+           members.normal.length <= seats.normal &&
+           members.priority.length <= seats.priority;
   }
   /**
-   * Generate table button enable or not toggle event
+   * GenerateTable button enable or not toggle event
    *
    * @event input-members#change
    * @event input-seats-x#change
    * @event input-seats-y#change
    */
   function checkSeatTableGeneratable() {
-    document.querySelector("#ctrl-generate").disabled = isAllFieldsValid();
+    document.querySelector("#ctrl-generate").disabled = !isAllFieldsValid();
   }
   document.querySelector("#input-members").addEventListener("change", checkSeatTableGeneratable);
+  document.querySelector("#seat-edit").addEventListener("click", checkSeatTableGeneratable);
+  document.querySelector("#seat-edit").addEventListener("contextmenu", checkSeatTableGeneratable);
   document.querySelector("#input-seats-x").addEventListener("change", checkSeatTableGeneratable);
   document.querySelector("#input-seats-y").addEventListener("change", checkSeatTableGeneratable);
 
@@ -59,7 +69,7 @@ window.onload = function() {
     if(isAllFieldsValid()) {
       print_seatresult(document.querySelector("#seat-result"),
                        seateditor.getSeatArray(),
-                       parse_members(document.querySelector("#input-members").value));
+                       membereditor.getMembersArray());
       document.querySelector("#view-seatset").style.display = "none";
       document.querySelector("#view-result").style.display = "";
     } else {
