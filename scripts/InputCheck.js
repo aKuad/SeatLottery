@@ -20,7 +20,7 @@ class InputCheck {
       case "number":
         this.element.isValid = true;
         this.element.addEventListener("change", function() {
-          if(this.value <= 0 || 99 < this.value) {
+          if(this.value <= 0 || 20 < this.value) {
             this.isValid = false;
             this.classList.add("input-view-invalid");
           } else {
