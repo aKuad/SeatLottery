@@ -32,9 +32,11 @@ class SeatEditor {
    * @param {number} width 
    */
   modifyWidth(width) {
+    // When invalid input
     if(width <= 0) {
-      throw new Error("Width specifying must be greater than zero");
+      throw new Error("Width specifying must be greater than zero.");
     }
+    // Increase width
     while(this.width < width) {
       let rows = this.print_ele.querySelectorAll(".seat-row");
       for(let i = 0; i < this.height; i++) {
@@ -42,6 +44,7 @@ class SeatEditor {
       }
       this.width++;
     }
+    // Decrease width
     while (this.width > width) {
       let rows = this.print_ele.querySelectorAll(".seat-row");
       for(let i = 0; i < this.height; i++) {
@@ -49,6 +52,8 @@ class SeatEditor {
       }
       this.width--;
     }
+    // Seat counter update
+    this.print_ele.dispatchEvent(new Event("click"));
   }
 
   /**
@@ -57,9 +62,11 @@ class SeatEditor {
    * @param {number} height 
    */
   modifyHeight(height) {
+    // When invalid input
     if(height <= 0) {
-      throw new Error("Height specifying must be greater than zero");
+      throw new Error("Height specifying must be greater than zero.");
     }
+    // Increase height
     while(this.height < height) {
       let row = document.createElement("div");
       row.classList.add("seat-row");
@@ -69,10 +76,13 @@ class SeatEditor {
       this.print_ele.appendChild(row);
       this.height++;
     }
+    // Decrease height
     while(this.height > height) {
       this.print_ele.removeChild(this.print_ele.lastChild);
       this.height--;
     }
+    // Seat counter update
+    this.print_ele.dispatchEvent(new Event("click"));
   }
 
   /**
@@ -95,7 +105,7 @@ class SeatEditor {
   /**
    * Return seat count
    *
-   * @returns {object}
+   * @returns {object} Object format: {"normal": num, "priority": num, "unused": num, "none": num}
    */
   getSeatCount() {
     let count = [0, 0, 0, 0];
@@ -112,11 +122,11 @@ class SeatEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachSeatCounterNormal(target_ele) {
-    function handle() {
-      target_ele.innerText = this.getter().normal;
-    }
-    this.print_ele.addEventListener("click",       {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
-    this.print_ele.addEventListener("contextmenu", {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
+    let handle = function() {
+      target_ele.innerText = this.getSeatCount().normal;
+    }.bind(this);
+    this.print_ele.addEventListener("click",       handle);
+    this.print_ele.addEventListener("contextmenu", handle);
     this.print_ele.dispatchEvent(new Event("click"));
   }
 
@@ -126,11 +136,11 @@ class SeatEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachSeatCounterPriority(target_ele) {
-    function handle() {
-      target_ele.innerText = this.getter().priority;
-    }
-    this.print_ele.addEventListener("click",       {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
-    this.print_ele.addEventListener("contextmenu", {"getter": this.getSeatCount, "print_ele": this.print_ele, "handleEvent": handle});
+    let handle = function() {
+      target_ele.innerText = this.getSeatCount().priority;
+    }.bind(this);
+    this.print_ele.addEventListener("click",       handle);
+    this.print_ele.addEventListener("contextmenu", handle);
     this.print_ele.dispatchEvent(new Event("click"));
   }
 
@@ -158,13 +168,12 @@ class SeatEditor {
    * @param {Object} e PointerEvent
    */
   static seatTypeChange(e) {
-    //
+    // Seat type number switch
     if(this.isIncrease) { e.currentTarget.seatType++; }
     else                { e.currentTarget.seatType--; }
-    //
     if(3 < e.currentTarget.seatType)      { e.currentTarget.seatType = 0; }
     else if(e.currentTarget.seatType < 0) { e.currentTarget.seatType = 3; }
-    //
+    // View modification
     e.currentTarget.classList.remove("seat-cell-normal");
     e.currentTarget.classList.remove("seat-cell-priority");
     e.currentTarget.classList.remove("seat-cell-unused");
