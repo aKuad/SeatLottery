@@ -6,10 +6,12 @@
 
 /**
  * Member editing textarea object
- *
- * @param {Object} obj_ele Textarea HTMLElement
  */
 class MemberEditor {
+  /**
+   * @constructs
+   * @param {HTMLElement} obj_ele Textarea HTMLElement
+   */
   constructor(obj_ele) {
     this.obj_ele = obj_ele;
   }
@@ -24,9 +26,13 @@ class MemberEditor {
     let ret = {"normal": [], "priority": []};
 
     for(let i = 0; i < members.length; i++) {
-      if(members[i] == "") { continue; }
+      if(members[i] == "") { continue; }  // Ignore empty line
       let m = members[i].split(",");
-      if(m.length < 3) { return null; }
+      if(m.length < 3) { return null; }   // On too few columns
+      // On short syntax (3 columns)
+      if(m.length == 3) {
+        m.splice(2, 0, "");
+      }
       if(m[3] == "1") { ret.priority.push(m); }
       else            { ret.normal.push(m); }
     }
