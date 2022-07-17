@@ -5,8 +5,9 @@
  */
 
 /**
- * 
- * @param {object} print_ele
+ * Lottery result printing to target element
+ *
+ * @param {HTMLElement} print_ele
  */
 function print_seatresult(print_ele, seatarray, members) {
   let m_nrm = array_shuffle(members.normal);

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/InputCheck.css">
+    <link rel="stylesheet" href="./styles/SeatEditor.css">
+    <link rel="stylesheet" href="./styles/paper.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <script type="text/javascript" charset="UTF-8" src="./scripts/InputCheck.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/SeatEditor.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/MemberEditor.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/array_shuffle.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/print_seatresult.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/main.js"></script>
+    <style type="text/css">
+      .seat-cell-normal::before {
+        content: "Normal";
+      }
+      .seat-cell-priority::before {
+        content: "Priority";
+      }
+      .seat-cell-unused::before {
+        content: "Unused";
+      }
+      .seat-cell-none::before {
+        content: "None";
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="view-seatset">
+      <div class="info-container">
+        Please specify seat layout and members.
+      </div>
+      <div class="info-container">
+        <div class="info-label">Status</div>
+        <table class="table-bodybase">
+          <tbody>
+            <tr>
+              <td class="table-cellbase table-rborder">Normal</td>
+              <td class="table-cellbase">Seats:</td>
+              <td class="table-cellbase table-rborder" id="stat-normal-seats"></td>
+              <td class="table-cellbase">Members:</td>
+              <td class="table-cellbase" id="stat-normal-members"></td>
+            </tr>
+            <tr>
+              <td class="table-cellbase table-rborder">Priority</td>
+              <td class="table-cellbase">Seats:</td>
+              <td class="table-cellbase table-rborder" id="stat-priority-seats"></td>
+              <td class="table-cellbase">Members:</td>
+              <td class="table-cellbase" id="stat-priority-members"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-container" style="text-align: center;">
+        <input type="button" class="info-button" id="ctrl-generate" value="Generate seat table" disabled>
+      </div>
+      <div class="info-container" style="text-align: center;">
+        <div class="info-label">Members</div>
+        <textarea id="input-members" placeholder="1,Name,0"></textarea>
+      </div>
+      <div class="info-container">
+        <div class="info-label">Seat count (cols x rows)</div>
+        <div style="text-align: center;">
+          <input type="number" id="input-seats-x" min="1" max="20" value="6"> x
+          <input type="number" id="input-seats-y" min="1" max="20" value="5">
+        </div>
+      </div>
+      <div id="seat-edit"></div>
+      <div class="doc-table">Teacher</div>
+    </div>
+
+    <div id="view-result" style="display: none;">
+      <div class="info-container no-print">If you need, please adjust expansion, print sheet angle, and so on in printing dialog.</div>
+      <div class="info-container no-print">Would you like to make layout in spreadsheet? Please use CSV export.</div>
+      <div class="info-container no-print" style="text-align: center;">
+        <input type="button" class="info-button" id="ctrl-back" value="Back">
+        <input type="button" class="info-button" value="Print" onclick="window.print();">
+        <a class="info-button" id="ctrl-export" href="" download="Seat.csv">CSV export</a>
+      </div>
+      <input type="text" class="doc-title" placeholder="Title (Optional)">
+      <div id="seat-result"></div>
+      <div class="doc-table">Teacher</div>
+      <textarea class="doc-desc" placeholder="Note (Optional) - To change size, drag bottom right corner"></textarea>
+    </div>
+  </body>
+</html>

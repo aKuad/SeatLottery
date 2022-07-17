@@ -6,11 +6,13 @@
 
 /**
  * Field input check and view change script appending class
- *
- * @param {object} element Check target element
- * @param {string} type Checking type specification ("number" or "members")
  */
 class InputCheck {
+  /**
+   * @constructs
+   * @param {HTMLElement} element Check target element
+   * @param {string} type Checking type specification ("number" or "members")
+   */
   constructor(element, type) {
     this.element = element;
     this.type = type;

@@ -22,6 +22,11 @@
   margin: 1mm;
 
   text-align: center;
+
+  transition: opacity 0.2s linear;
+}
+.seat-cell:hover {
+  opacity: 0.6;
 }
 .seat-cell-edit {
   line-height: 2em;
@@ -39,24 +44,12 @@
 .seat-cell-normal {
   background-color: hsl(240, 100%, 90%);
 }
-.seat-cell-normal::before {
-  content: "一般";
-}
 .seat-cell-priority {
   background-color: hsl(120, 100%, 90%);
-}
-.seat-cell-priority::before {
-  content: "優先";
 }
 .seat-cell-unused {
   background-color: hsl(0, 0%, 60%);
 }
-.seat-cell-unused::before {
-  content: "未";
-}
 .seat-cell-none {
   background-color: hsl(0, 0%, 100%);
-}
-.seat-cell-none::before {
-  content: "無";
 }

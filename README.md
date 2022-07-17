@@ -1,79 +1,87 @@
-# 講義室座席抽選プログラム
+# SeatLottery
 
-入力された氏名、座席情報から、席順をランダムに割り振った座席表を生成するプログラムです。
+English | [日本語](./README_ja.md)
 
-* プレーン HTML、CSS、JavaScript のみで構築されており、サーバを必要とせず、ブラウザの動作する環境であれば、OS を問わずに利用できます。
-* オンラインリソース (ライブラリなど) を使用していないため、オフライン上でも動作します。
+Generate seat table from specified names and seat layout.
 
-## 注意
+![Screen - Top](./doc/screen-en-1-top.png)
 
-* Internet Explorer をはじめとする、ECMAScript 2015 (ES6) に対応していないブラウザでの動作は保証しておりません。
-* スマートフォン (モバイルブラウザ) での動作は保証しておりません。
-* 同一の乱数を発生させ、同一の結果を生成する機能は実装しておりません。結果表示を一度閉じると、印刷や CSV などで出力していない結果は失われます。
+## Features
 
-## 1. 起動
+* It written in only plain HTML, CSS and JavaScript. Required only browser and regardless of OS.
+* Online resources are unused. So it can works in offline.
 
-リポジトリをクローン (ソースをダウンロード) し、ブラウザで `SeatLottery.html` を開きます。
+## Note
 
-![Screen - Top](./doc/screen-1-top.png)
+* Unsupported for browsers which unsupported ECMAScript 2015 (ES6) (eg. Internet Explorer).
+* Unsupported working on smartphones (mobile browsers).
+* Feature of re-generating same result is not implemented. When closed, unsaved (print or export CSV) data will be lost.
 
-## 2. メンバー入力
+## Useage
 
-以下の記法にしたがって、テキストボックスにメンバー入力を行います。
+### 1. Download, Launch
+
+Please clone this repository (download code), and just open `SeatLottery_en.html` in browser.
+Japanese version is available in `SeatLottery_ja.html`
+
+No required additional libraries or software.
+
+### 2. Input members
+
+Please input members in the textbox, following this syntax.
 
 ```txt
-番号,氏名,フリガナ,優先席指定 (0 or 1)
+Number,Name,Normal or Priority (0 or 1)
 ```
 
-入力例は以下のようになります。
+Example of input:
 
 ```txt
-1,鈴木 太郎,スズキ タロウ,0
-2,伊藤 花子,イトウ ハナコ,1
+1,Bob,0
+2,Alice,1
 ```
 
-* 番号は、昇順や降順に並べられていなくとも、動作に影響はありません。また、番号が重複していても、文字列などを含んでいても、エラーや警告などは発生しません。
-* フリガナ表示が不要な場合は、フリガナ欄を空白にしてください。 `例) 1,鈴木 太郎,,0` (コンマは必要です。)
-* 左から 4列目のフィールドは、一般席か優先席の指定です。1を指定すると優先席指定、それ以外の値を入力すると一般席指定になります。
+* The "Number" field will not affect to behavior. There no errors will be occure even if duplicates or un sorted.
+* Most right column is specifying of normal or Priority. Specify 1 to set priority, and other value to set normal.
 
-## 3. 座席情報入力
+### 3. Imput seat layout
 
-縦x横の座席数を入力します。
-フィールドには、1 から 20 までの整数を入力することができます。
-フィールドの値を変更すると、座席表示が変わります。
+Please input seat count of rows x cols.
+The field can be set to 1 - 20.
+Changing this value, the seat view will be changed.
 
-表示されている座席ブロックを右クリックまたは左クリックすると、座席の種別を「一般, 優先, 未, 空」に変更することができます。
-それぞれ、以下のような設定を想定しています。
+Click seat block to switch seat type "Normal, Priority, Unused or None".
 
-* 一般 - 通常の座席
-* 優先 - 前方希望など、一般席と別枠の座席
-* 未 - 未使用の座席
-* 空 - 座席が配置されていない箇所
+It assuming like these:
 
-![Screen - Seat sample (edit)](./doc/screen-2-seatedit.png)
+* Normal - Normal seat
+* Priority - Priority seat (eg. for hope forward seat)
+* Unused - Unused seat
+* None - Nothing place
 
-![Screen - Seat sample (result)](./doc/screen-3-seatsample.png)
+![Screen - Seat sample (edit)](./doc/screen-en-2-seatedit.png)
 
-## 4. 座席表生成
+![Screen - Seat sample (result)](./doc/screen-en-3-seatsample.png)
 
-以下の条件を満たすと、「座席表を生成」ボタンを押せるようになります。
+### 4. Generating seat table
 
-* メンバー入力が正しい記法に沿っている。
-* 座席数に正しい値 (1以上 20以下) が入力されている。
-* メンバー数よりも座席数が上回っている。(一般、優先共に)
+"Generate seat table" button will be enabled on these requirements are fulfilled.
 
-![Screen - Seat table generate](./doc/screen-4-generate.png)
+* Member input is following correct syntax
+* Seat count of rows and columns are specified correct value (1 <= value <= 20)
+* Seat count is over than member count (both Normal or Priority)
 
-「座席表を生成」ボタンを押すと、設定された座席表にランダムでメンバーが割り振られた座席表が表示されます。
+![Screen - Seat table generate](./doc/screen-en-4-generate.png)
 
-![Screen - Result](./doc/screen-5-result.png)
+Click "Generate seat table" button to view result (assigned members in randomly, following layout).
 
-必要に応じ、タイトル欄や備考欄に必要事項を入力してください。入力が空のときは、印刷時にフィールドが非表示になります。
+![Screen - Result](./doc/screen-en-5-result.png)
 
-ブラウザのページ印刷機能、または「印刷」ボタンから、座席表を印刷することができます。
-余白は自動調整されないため、必要に応じてブラウザの印刷機能から手動で調整してください。
+If you need, please fill title and/or note field. If the field is empty, it will be hidden on printing.
 
-## ライセンス
+It can print by feature of browsers. The feature can also call from "Print" button.
+But margin will not be adjusted automatically. If you need, please adjust in printing dialog.
 
-本プログラムは、CC0 ライセンスの下で配布しています。
-動作保証などが無い一方で、改変や再配布を自由に行うことを許可しています。
+## License
+
+It publishing under [CC0](./LICENSE) license.

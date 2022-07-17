@@ -6,12 +6,14 @@
 
 /**
  * Seat editing field object
- *
- * @param {object} print_ele
- * @param {number} width
- * @param {number} height
  */
 class SeatEditor {
+  /**
+   * @constructs
+   * @param {object} print_ele
+   * @param {number} width
+   * @param {number} height
+   */
   constructor(print_ele, width, height) {
     this.print_ele = print_ele;
     this.width = 1;
