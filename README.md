@@ -36,10 +36,7 @@ Number,Name,Normal or Priority (0 or 1)
 
 Example of input:
 
-```txt
-1,Bob,0
-2,Alice,1
-```
+![Screen - Member input](doc/screen-en-2-member.png)
 
 * The "Number" field will not affect to behavior. There no errors will be occure even if duplicates or un sorted.
 * Most right column is specifying of normal or Priority. Specify 1 to set priority, and other value to set normal.
@@ -50,7 +47,7 @@ Please input seat count of rows x cols.
 The field can be set to 1 - 20.
 Changing this value, the seat view will be changed.
 
-Click seat block to switch seat type "Normal, Priority, Unused or None".
+Click (left or right) seat block to switch seat type "Normal, Priority, Unused or None".
 
 It assuming like these:
 
@@ -59,9 +56,9 @@ It assuming like these:
 * Unused - Unused seat
 * None - Nothing place
 
-![Screen - Seat sample (edit)](./doc/screen-en-2-seatedit.png)
+![Screen - Seat sample (edit)](./doc/screen-en-3-seatedit.png)
 
-![Screen - Seat sample (result)](./doc/screen-en-3-seatsample.png)
+![Screen - Seat sample (result)](./doc/screen-en-4-seatsample.png)
 
 ### 4. Generating seat table
 
@@ -71,11 +68,11 @@ It assuming like these:
 * Seat count of rows and columns are specified correct value (1 <= value <= 20)
 * Seat count is over than member count (both Normal or Priority)
 
-![Screen - Seat table generate](./doc/screen-en-4-generate.png)
+![Screen - Seat table generate](./doc/screen-en-5-generate.png)
 
 Click "Generate seat table" button to view result (assigned members in randomly, following layout).
 
-![Screen - Result](./doc/screen-en-5-result.png)
+![Screen - Result](./doc/screen-en-6-result.png)
 
 If you need, please fill title and/or note field. If the field is empty, it will be hidden on printing.
 
