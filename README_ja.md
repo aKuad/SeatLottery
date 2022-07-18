@@ -34,12 +34,9 @@
 番号,氏名,フリガナ,優先席指定 (0 or 1)
 ```
 
-入力例は以下のようになります。
+入力例:
 
-```txt
-1,鈴木 太郎,スズキ タロウ,0
-2,伊藤 花子,イトウ ハナコ,1
-```
+![Screen - Member input](doc/screen-ja-2-member.png)
 
 フリガナが不要な場合は、以下の形式で記述します。
 
@@ -66,9 +63,9 @@
 * 未 - 未使用の座席
 * 空 - 座席が配置されていない箇所
 
-![Screen - Seat sample (edit)](./doc/screen-ja-2-seatedit.png)
+![Screen - Seat sample (edit)](./doc/screen-ja-3-seatedit.png)
 
-![Screen - Seat sample (result)](./doc/screen-ja-3-seatsample.png)
+![Screen - Seat sample (result)](./doc/screen-ja-4-seatsample.png)
 
 ### 4. 座席表生成
 
@@ -78,11 +75,11 @@
 * 座席数に正しい値 (1以上 20以下) が入力されている。
 * メンバー数よりも座席数が上回っている。(一般、優先共に)
 
-![Screen - Seat table generate](./doc/screen-ja-4-generate.png)
+![Screen - Seat table generate](./doc/screen-ja-5-generate.png)
 
 「座席表を生成」ボタンを押すと、設定された座席表にランダムでメンバーが割り振られた座席表が表示されます。
 
-![Screen - Result](./doc/screen-ja-5-result.png)
+![Screen - Result](./doc/screen-ja-6-result.png)
 
 必要に応じ、タイトル欄や備考欄に必要事項を入力してください。入力が空のときは、印刷時にフィールドが非表示になります。
 
