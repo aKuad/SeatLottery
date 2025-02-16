@@ -21,8 +21,8 @@ Generate seat table from specified names and seat layout.
 
 ### 1. Download, Launch
 
-Please clone this repository (download code), and just open `SeatLottery_en.html` in browser.
-Japanese version is available in `SeatLottery_ja.html`
+Please clone this repository (download code), and just open `index.html` in browser.
+Japanese version is available in `index_ja.html`
 
 No required additional libraries or software.
 
