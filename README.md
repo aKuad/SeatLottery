@@ -21,6 +21,12 @@ Generate seat table from specified names and seat layout.
 
 ### 1. Download, Launch
 
+#### Online
+
+It is available on GitHub Pages. Just only access to <https://akuad.github.io/SeatLottery/>
+
+#### Offline
+
 Please clone this repository (download code), and just open `index.html` in browser.
 Japanese version is available in `index_ja.html`
 

@@ -21,8 +21,14 @@
 
 ### 1. ダウンロード, 起動
 
-本リポジトリをクローン (ソースをダウンロード) し、ブラウザで `SeatLottery_ja.html` を開きます。
-英語版は `SeatLottery_en.html` から利用できます。
+#### オンライン
+
+GitHub Pages 上でも利用できます。こちらへアクセスしてください: <https://akuad.github.io/SeatLottery/index_ja.html>
+
+#### オフライン
+
+本リポジトリをクローン (ソースをダウンロード) し、ブラウザで `index_ja.html` を開きます。
+英語版は `index.html` から利用できます。
 
 他に、追加のライブラリやソフトなどは不要です。
 
