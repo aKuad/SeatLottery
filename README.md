@@ -17,12 +17,18 @@ Generate seat table from specified names and seat layout.
 * Unsupported working on smartphones (mobile browsers).
 * Feature of re-generating same result is not implemented. When closed, unsaved (print or export CSV) data will be lost.
 
-## Useage
+## Usage
 
 ### 1. Download, Launch
 
-Please clone this repository (download code), and just open `SeatLottery_en.html` in browser.
-Japanese version is available in `SeatLottery_ja.html`
+#### Online
+
+It is available on GitHub Pages. Just only access to <https://akuad.github.io/SeatLottery/>
+
+#### Offline
+
+Please clone this repository (download code), and just open `index.html` in browser.
+Japanese version is available in `index_ja.html`
 
 No required additional libraries or software.
 

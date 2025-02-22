@@ -18,6 +18,10 @@ body {
   margin: 1cm;
 }
 
+h1 {
+  text-align: center;
+}
+
 
 /* Stat view */
 .table-bodybase {
