@@ -1,5 +1,7 @@
 # SeatLottery Usage
 
+English \| [日本語](./ja.html)
+
 ## 1. Launch
 
 It's available on online. Just only access to: <https://akuad.github.io/SeatLottery/>
