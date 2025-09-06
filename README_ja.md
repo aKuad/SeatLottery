@@ -4,7 +4,7 @@
 
 入力された氏名、座席情報から、席順をランダムに割り振った座席表を生成するプログラムです。
 
-![Screen - Top](./usage/images-ja/screen-ja-1-top.png)
+![Screen - Top](./usage/images-ja/screen-ja-1-top.webp)
 
 ## 特徴
 

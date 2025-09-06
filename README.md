@@ -4,7 +4,7 @@ English | [日本語](./README_ja.md)
 
 Generate seat table from specified names and seat layout.
 
-![Screen - Top](./usage/images-en/screen-en-1-top.png)
+![Screen - Top](./usage/images-en/screen-en-1-top.webp)
 
 ## Features
 

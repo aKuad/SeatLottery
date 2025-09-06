@@ -18,7 +18,7 @@ Number,Name,Normal or Priority (0 or 1)
 
 Example of input:
 
-![Screen - Member input](images-en/screen-en-2-member.png)
+![Screen - Member input](images-en/screen-en-2-member.webp)
 
 Note: The 'Number' field makes no errors when including string, duplicated and/or unsorted.
 
@@ -33,9 +33,9 @@ Click (left or right) seat block to switch seat type 'Normal, Priority, Unused o
 * Unused - Unused seat
 * None - Nothing place
 
-![Screen - Seat sample (edit)](./images-en/screen-en-3-seatedit.png)
+![Screen - Seat sample (edit)](./images-en/screen-en-3-seatedit.webp)
 
-![Screen - Seat sample (result)](./images-en/screen-en-4-seatsample.png)
+![Screen - Seat sample (result)](./images-en/screen-en-4-seatsample.webp)
 
 ## 4. Generating seat table
 
@@ -45,11 +45,11 @@ Click (left or right) seat block to switch seat type 'Normal, Priority, Unused o
 * Seat count of rows and columns are specified correct value (1 <= value <= 20)
 * Seat count is over than member count (both Normal or Priority)
 
-![Screen - Seat table generate](./images-en/screen-en-5-generate.png)
+![Screen - Seat table generate](./images-en/screen-en-5-generate.webp)
 
 Click it to view result. Members will be assigned in randomly with following specified layout.
 
-![Screen - Result](./images-en/screen-en-6-result.png)
+![Screen - Result](./images-en/screen-en-6-result.webp)
 
 If you need, please fill title and/or note field. If the field is empty, it will be hidden on printing.
 

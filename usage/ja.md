@@ -18,7 +18,7 @@ GitHub Pages 上で利用できます。こちらへアクセスしてくださ�
 
 入力例:
 
-![Screen - Member input](./images-ja/screen-ja-2-member.png)
+![Screen - Member input](./images-ja/screen-ja-2-member.webp)
 
 フリガナが不要な場合は、以下の形式で記述します。
 
@@ -41,9 +41,9 @@ Note: 番号は、文字列を含んでいても、昇順/降順に並べられ�
 * 未 - 未使用の座席
 * 空 - 座席が配置されていない箇所
 
-![Screen - Seat sample (edit)](./images-ja/screen-ja-3-seatedit.png)
+![Screen - Seat sample (edit)](./images-ja/screen-ja-3-seatedit.webp)
 
-![Screen - Seat sample (result)](./images-ja/screen-ja-4-seatsample.png)
+![Screen - Seat sample (result)](./images-ja/screen-ja-4-seatsample.webp)
 
 ## 4. 座席表生成
 
@@ -53,11 +53,11 @@ Note: 番号は、文字列を含んでいても、昇順/降順に並べられ�
 * 座席数に正しい値 (1以上 20以下) が入力されている。
 * メンバー数よりも座席数が上回っている。(一般、優先共に)
 
-![Screen - Seat table generate](./images-ja/screen-ja-5-generate.png)
+![Screen - Seat table generate](./images-ja/screen-ja-5-generate.webp)
 
 「座席表を生成」ボタンを押すと、設定された座席表にランダムでメンバーが割り振られた座席表が表示されます。
 
-![Screen - Result](./images-ja/screen-ja-6-result.png)
+![Screen - Result](./images-ja/screen-ja-6-result.webp)
 
 必要に応じ、タイトル欄や備考欄に必要事項を入力してください。入力が空のときは、印刷時にフィールドが非表示になります。
 
