@@ -4,11 +4,11 @@
 
 ## 1. ダウンロード, 起動
 
-GitHub Pages 上で利用できます。こちらへアクセスしてください: <https://akuad.github.io/SeatLottery/index_ja.html>
+GitHub Pages 上で利用できます。こちらへアクセスしてください: <https://akuad.github.io/SeatLottery/ja.html>
 
 オフラインで利用するには:
 
-本リポジトリをクローン (ソースをダウンロード) し、ブラウザで `index_ja.html` を開いてください。他に、追加のライブラリやソフトなどは不要です。
+本リポジトリをクローン (ソースをダウンロード) し、ブラウザで `src/ja.html` を開いてください。他に、追加のライブラリやソフトなどは不要です。
 
 ## 2. メンバー入力
 
