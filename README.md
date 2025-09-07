@@ -4,6 +4,8 @@ English | [日本語](./README_ja.md)
 
 Generate seat table from specified names and seat layout.
 
+[Usage](https://akuad.github.io/SeatLottery/usage/)
+
 ![Screen - Top](./usage/images-en/screen-en-1-top.webp)
 
 ## Features

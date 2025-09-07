@@ -4,6 +4,8 @@
 
 入力された氏名、座席情報から、席順をランダムに割り振った座席表を生成するプログラムです。
 
+[使い方](https://akuad.github.io/SeatLottery/usage/ja.html)
+
 ![Screen - Top](./usage/images-ja/screen-ja-1-top.webp)
 
 ## 特徴
