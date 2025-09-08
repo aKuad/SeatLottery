@@ -11,6 +11,11 @@ jobs:
     steps:
     - name: Source checkout
       uses: actions/checkout@v4
+    - name: Build usage page
+      uses: actions/jekyll-build-pages@v1
+      with:
+        source: usage
+        destination: src/usage
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4
       with:
