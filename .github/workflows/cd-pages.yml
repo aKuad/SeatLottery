@@ -16,6 +16,11 @@ jobs:
       with:
         source: usage
         destination: src/usage
+    - name: Fix path in usage/index.html to relative
+      run: |
+        mv src/index.html src/index-bac.html
+        sed -e 's/"\/SeatLottery/./g' src/index-bac.html > src/index.html
+        rm src/index-bac.html
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4
       with:
