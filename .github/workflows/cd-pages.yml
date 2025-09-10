@@ -21,7 +21,7 @@ jobs:
         sudo chmod 777 src/usage
         cd src/usage
         mv index.html index-bac.html
-        sed -e 's/"\/SeatLottery/./g' index-bac.html > index.html
+        sed -e 's/"\/SeatLottery/"./g' index-bac.html > index.html
         rm index-bac.html
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4
