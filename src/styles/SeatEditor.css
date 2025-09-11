@@ -17,9 +17,11 @@
   max-width: 4cm;
   flex-grow: 1;
   cursor: pointer;
+  border: none;
   border-right: 4px solid hsl(0, 0%, 40%);
   border-bottom: 4px solid hsl(0, 0%, 40%);
   margin: 1mm;
+  padding: 0;
 
   text-align: center;
 
