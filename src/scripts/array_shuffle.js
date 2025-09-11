@@ -1,6 +1,6 @@
 /**
  * array-shuffle.js
- * 
+ *
  * @author aKuad
  */
 

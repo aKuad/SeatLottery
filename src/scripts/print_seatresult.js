@@ -7,7 +7,7 @@
 /**
  * Lottery result printing to target element
  *
- * @param {HTMLElement} print_ele
+ * @param {HTMLElement} print_ele Element of field to print result
  */
 function print_seatresult(print_ele, seatarray, members) {
   let m_nrm = array_shuffle(members.normal);
