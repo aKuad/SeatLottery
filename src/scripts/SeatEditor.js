@@ -152,7 +152,7 @@ class SeatEditor {
    * @returns {object} Created element object
    */
   static createInitialCell() {
-    let cell = document.createElement("div");
+    let cell = document.createElement("button");
     cell.classList.add("seat-cell");
     cell.classList.add("seat-cell-edit");
     cell.classList.add("seat-cell-normal");
