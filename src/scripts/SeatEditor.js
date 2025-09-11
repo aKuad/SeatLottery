@@ -1,6 +1,6 @@
 /**
  * SeatEditor.js
- * 
+ *
  * @author aKuad
  */
 
@@ -31,7 +31,7 @@ class SeatEditor {
   /**
    * Seat width count modify method
    *
-   * @param {number} width 
+   * @param {number} width Width of seat grid to be modified
    */
   modifyWidth(width) {
     // When invalid input
@@ -61,7 +61,7 @@ class SeatEditor {
   /**
    * Seat height count modify method
    *
-   * @param {number} height 
+   * @param {number} height Height of seat grid to be modified
    */
   modifyHeight(height) {
     // When invalid input
@@ -90,7 +90,7 @@ class SeatEditor {
   /**
    * Return seat type matrix array
    *
-   * @returns {Array}
+   * @returns {Array<number>} Seat type matrix array
    */
   getSeatArray() {
     let ret = [];
