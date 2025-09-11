@@ -16,6 +16,15 @@ jobs:
       with:
         source: usage
         destination: src/usage
+    - name: Fix path in usage/index.html to relative
+      run: |
+        sudo chmod 777 src/usage
+        cd src/usage
+        mv index.html index-bac.html
+        sed -e 's/"\/SeatLottery/"./g' index-bac.html > index.html
+        mv ja.html ja-bac.html
+        sed -e 's/"\/SeatLottery/"./g' ja-bac.html > ja.html
+        rm index-bac.html ja-bac.html
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v4
       with:
