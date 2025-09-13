@@ -27,13 +27,13 @@
 
   transition: opacity 0.2s linear;
 }
-.seat-cell:hover {
-  opacity: 0.6;
-}
 .seat-cell-edit {
   line-height: 2em;
   font-size: 2rem;
   font-weight: bold;
+}
+.seat-cell-edit:hover {
+  opacity: 0.6;
 }
 .seat-cell-result {
   padding: 1em 0 0.5em 0;
