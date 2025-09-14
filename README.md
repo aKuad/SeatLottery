@@ -21,4 +21,4 @@ Generate seat table from specified names and seat layout.
 
 ## License
 
-It publishing under [CC0](./LICENSE) license.
+It publishing under [CC0-1.0](./LICENSE) license.
