@@ -31,6 +31,11 @@
   line-height: 2em;
   font-size: 2rem;
   font-weight: bold;
+  height: 2em;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5em;
 }
 .seat-cell-edit:hover {
   opacity: 0.6;
@@ -45,13 +50,17 @@
 
 .seat-cell-normal {
   background-color: hsl(240, 100%, 90%);
+  background-image: url("../icons/normal.svg");
 }
 .seat-cell-priority {
   background-color: hsl(120, 100%, 90%);
+  background-image: url("../icons/priority.svg");
 }
 .seat-cell-unused {
   background-color: hsl(0, 0%, 60%);
+  background-image: url("../icons/unused.svg");
 }
 .seat-cell-none {
   background-color: hsl(0, 0%, 100%);
+  background-image: url("../icons/none.svg");
 }
