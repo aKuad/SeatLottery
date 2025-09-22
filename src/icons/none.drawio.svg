@@ -1,29 +1,41 @@
-<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="89px" height="89px" viewBox="-0.5 -0.5 89 89" content="&lt;mxfile&gt;&lt;diagram id=&quot;WoGZgLbWJEyjC-1BRA64&quot; name=&quot;Icon&quot;&gt;7ZhNU4MwEIZ/DVeHQj/gqK3Vg84440E9ZkqEaGCZsLXgrzfI8j2dOtpSD5xI3uxuyO4zSwbDXobpjWJxcA8el4ZleqlhrwzLmiwWpn7kSlYojjsrBF8Jj4xq4VF8chLJz98KjyctQwSQKOK2uIEo4htsaUwp2LXNXkG2d42Zz3vC44bJvvokPAxInZtmvXDLhR/Q1m65ELLSmIQkYB7sGpJ9bdhLBYDFKEyXXObJK/NS+K33rFYvpniEP3KwCo8PJrd0OHoxzMrTck8fnqYRRPpxBQoD8CFi8g4g1vpEi28cMaNisS2ClgIMJa3yyLvMU18H0cpayHzdzGepwOd8fGHNaPpSuurxKm3YrTKaJKjgvaqBo5V+Aign+SkaAqXjhkPIUWXaYNeoZFkvxSVD8dEuOyN6/Mq3CvcAQm9rmWlFROGSldk22yES2KoNJ69mmQ4FmnYCIVM+x14gnXGWNczi3CBpWuhBIwu19M3JHmbskZnhmLHMYzHjnJOZ6cjMCZmxOqWe/5aZ6YFAgzIzG5k5HTNVX/kzM85/YmY+MnPCPuN2Sm0fi5mz3mcWIzMnZMY+FjPdb9NZmXFGZgbsM+6x+sxZ78DuyMyAfebXzHT7zIDM6Gn976cwr/+g2ddf&lt;/diagram&gt;&lt;/mxfile&gt;">
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="89px" height="89px" viewBox="-0.5 -0.5 89 89" content="&lt;mxfile&gt;&lt;diagram id=&quot;WoGZgLbWJEyjC-1BRA64&quot; name=&quot;Icon&quot;&gt;7Zlbk5sgFMc/je9GdDWPbbqXh+1MZ/ahz4xQtUWPg5jEfvpixRvuJQ002Z3xJZE/cA4cfsNBdNAuP95zXKZfgVDmeC45OuiL43mhG8nfVmg6AQVKSHhGOmkzCk/Zb6pEV6l1Rmg1aygAmMjKuRhDUdBYzDTMORzmzX4Am3stcUIXwlOM2VL9nhGRKvXGdceKB5olqXK97Sty3DdWQpViAoeJhG4dtOMAonvKjzvK2tj1cen63b1QOwyM00Kc1MHreuwxq9Xk1MBE08+WEjl5VSygkH+fgYsUEigwewQopb6R4k8qRKMWC9cCpJSKnKlaWpBPbehHI1K5y1hb78pSJTj8GsIZSYVDXRBKVH1c8/1QWE5Tzbwd60RQk76nkFPBG9ngMFmvflU4ZVhk+/niYsVIMvQdzH2DTLr1XIXzBik7TR9Td26igprHVPWaLoZuyNMMIc2QwDyhYmFIxhU3k2Zl26B6ZcC6nzkk8qGz2JcmARylvyA9D5WHVqiModLXyLcFVWAK1YSTfyUDfeTtRsPgGVSuQ0Zoi4zommR85D3jvZKxPZcMLaN57mUSUe/HViJC/gqVMVT+GyycDFVgGyqT7SZYyTAmI7RFRvSeyLhZyTAmY2uJjKHjSxnNUiLS/VhPROEKlSlUCxb04+rZUOkH6ItuN9uVDOtk6K+4Z5Ohv3Rfkoze90qGRTL0G7WTjyhaRlvc8f2nRGT7as7frFAZn26iN1g4GarQNlQm2423kmFMRmCLDP96ZMji+P2paz5+xEO3fwA=&lt;/diagram&gt;&lt;/mxfile&gt;">
     <defs/>
     <g>
         <g>
-            <path d="M 44 4 L 44 24" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 14 4 L 4 4 L 4 14" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
         <g>
-            <path d="M 44 84 L 44 64" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 4 24 L 4 34" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
         <g>
-            <path d="M 4 44 L 24 44" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 4 54 L 4 64" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
         <g>
-            <path d="M 84 44 L 64 44" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 4 74 L 4 84 L 14 84" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
         <g>
-            <path d="M 74 14 L 64 24" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 24 84 L 34 84" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
         <g>
-            <path d="M 14 14 L 24 24" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 54 84 L 64 84" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
         <g>
-            <path d="M 74 74 L 64 64" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 74 84 L 84 84 L 84 74" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
         <g>
-            <path d="M 14 74 L 24 64" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 84 64 L 84 54" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 84 34 L 84 24" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 84 14 L 84 4 L 74 4" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 64 4 L 54 4" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 34 4 L 24 4" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
     </g>
 </svg>
