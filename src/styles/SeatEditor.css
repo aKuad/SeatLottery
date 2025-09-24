@@ -57,7 +57,7 @@
   background-image: url("../icons/priority.svg");
 }
 .seat-cell-unused {
-  background-color: hsl(0, 0%, 60%);
+  background-color: hsl(0, 0%, 100%);
   background-image: url("../icons/unused.svg");
 }
 .seat-cell-none {

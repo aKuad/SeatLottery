@@ -1,17 +1,8 @@
-<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="90px" height="59px" viewBox="-0.5 -0.5 90 59" content="&lt;mxfile&gt;&lt;diagram id=&quot;WoGZgLbWJEyjC-1BRA64&quot; name=&quot;Icon&quot;&gt;7ZZNU4MwEIZ/DXcItbZHrW096IwzPXjOQIRoYJmwtMVfb5ANn3XaQ7UeegHyZPdNdt/A4PiLZL/WPIufIRTKYW64d/wHh7HZxDfXCpQ1mLBpDSItwxp5LdjIT0HQJVrIUOS9QARQKLM+DCBNRYA9xrWGXT/sDVR/1YxHYgQ2AVdj+ipDjIlOXbedeBQyimnpuZ1IuA0mkMc8hF0H+UvHX2gArJ+S/UKoqne2L3Xe6ofZZmNapHhKApvXGVuuCiqONoalrVaEpngappCa2z1ojCGClKsngMxwz8B3gViSWbxAMCjGRNGsSMO7qvWtiCErqap514xy1PDRtHNmyLgWKq/aUAdQZWsBiUBdmoBdxxTbei0UR7ntO8jpIERNbiP3AtIsy1w6s55POnRkPeuglcih0IGgrG7HjwndDoSQ60jgSMg0j5edsKwKyLsR5qHThRZ9W37YfruXq/3H7J+fy/6h0EXtn13tP81+dib7mXtE6E/t//cf/4HXB87DZT7+N+d6+4dCv2i/Gbb/FXV4+3PmL78A&lt;/diagram&gt;&lt;/mxfile&gt;">
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="88px" height="88px" viewBox="-0.5 -0.5 88 88" content="&lt;mxfile&gt;&lt;diagram id=&quot;WoGZgLbWJEyjC-1BRA64&quot; name=&quot;Icon&quot;&gt;jZJNb4MwDIZ/Te6UVBW9lnXrZScOO0fEJdECRsEM2K9fWBI+VlXaBdmPbey8NuN5Pb5Z0ap3lGBYmsiR8ReWptmRu+8MJg+O6cmDymrp0WEFhf6GAJNAey2h2yUSoiHd7mGJTQMl7ZiwFod92h3NvmsrKngARSnMI/3QklSgpyRZAzfQlQqtzzFQi5gcQKeExGGD+JXx3CKSt+oxBzNrF3Xxda9PostgFhr6TwE/+4ovYfrwuDAYTfG1FvtGwlyQMH4ZlCYoWlHO0cGt1zFFtXHewZl3bUyOBq3zG2xc0qUji5+LUJkjoSdYgvHp4IdFDndGgDWQnVxKLIgKTn/8YV1IFpDarCIyEU6gWv68quSMIFR014X8xjZXza8/&lt;/diagram&gt;&lt;/mxfile&gt;">
     <defs/>
     <g>
         <g>
-            <path d="M 14 4 L 14 54" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-        </g>
-        <g>
-            <path d="M 74 4 L 74 54" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-        </g>
-        <g>
-            <path d="M 4 4 L 84 4" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-        </g>
-        <g>
-            <path d="M 14 34 L 74 34" fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <rect x="4" y="4" width="80" height="80" fill="none" stroke="#000000" stroke-width="8" pointer-events="all" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
         </g>
     </g>
 </svg>
