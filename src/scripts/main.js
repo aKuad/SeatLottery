@@ -51,7 +51,7 @@ window.onload = function() {
   /**
    * GenerateTable button enable or not toggle event
    *
-   * @event input-members#change
+   * @event input-members#input
    * @event input-seats-x#change
    * @event input-seats-y#change
    */
