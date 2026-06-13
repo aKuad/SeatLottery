@@ -34,7 +34,7 @@ class InputCheck {
 
       case "members":
         this.element.isValid = false;
-        this.element.addEventListener("change", function() {
+        this.element.addEventListener("input", function() {
           if(!InputCheck.checkMembersInput(this.value)) {
             this.isValid = false;
             this.classList.add("input-view-invalid");
