@@ -50,7 +50,7 @@ h1 {
 
 
 /* Guide and buttons */
-.info-button {
+.button-prime {
   display: inline-block;
   border: none;
   outline: none;
@@ -66,10 +66,10 @@ h1 {
 
   transition: opacity 0.2s linear;
 }
-.info-button:hover {
+.button-prime:hover {
   opacity: 0.6;
 }
-.info-button:disabled {
+.button-prime:disabled {
   cursor: default;
   opacity: 0.4;
 }
