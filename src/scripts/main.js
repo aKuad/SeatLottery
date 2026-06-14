@@ -48,6 +48,7 @@ window.onload = function() {
            members.normal.length <= seats.normal &&
            members.priority.length <= seats.priority;
   }
+
   /**
    * GenerateTable button enable or not toggle event
    *
@@ -63,6 +64,19 @@ window.onload = function() {
   document.querySelector("#seat-edit").addEventListener("contextmenu", checkSeatTableGeneratable);
   document.querySelector("#input-seats-x").addEventListener("change", checkSeatTableGeneratable);
   document.querySelector("#input-seats-y").addEventListener("change", checkSeatTableGeneratable);
+
+  // Button - Text file input
+  document.querySelector("#input-members-file").addEventListener("input", async e => {
+    const file = e.target.files[0];
+    if(!file) return; // If no files input, do nothing
+    const file_text = await file.text();
+
+    if(!document.querySelector("#input-members").value.endsWith('\n'))
+      document.querySelector("#input-members").value += '\n';
+    document.querySelector("#input-members").value += file_text;
+
+    document.querySelector("#input-members").dispatchEvent(new Event("input"));  // For run input check
+  });
 
   // Button - Generate seat table
   document.querySelector("#ctrl-generate").addEventListener("click", function() {
