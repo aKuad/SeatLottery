@@ -51,14 +51,14 @@ window.onload = function() {
   /**
    * GenerateTable button enable or not toggle event
    *
-   * @event input-members#change
+   * @event input-members#input
    * @event input-seats-x#change
    * @event input-seats-y#change
    */
   function checkSeatTableGeneratable() {
     document.querySelector("#ctrl-generate").disabled = !isAllFieldsValid();
   }
-  document.querySelector("#input-members").addEventListener("change", checkSeatTableGeneratable);
+  document.querySelector("#input-members").addEventListener("input", checkSeatTableGeneratable);
   document.querySelector("#seat-edit").addEventListener("click", checkSeatTableGeneratable);
   document.querySelector("#seat-edit").addEventListener("contextmenu", checkSeatTableGeneratable);
   document.querySelector("#input-seats-x").addEventListener("change", checkSeatTableGeneratable);
