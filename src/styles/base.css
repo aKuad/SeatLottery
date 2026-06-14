@@ -6,6 +6,9 @@
  */
 
 /* Root */
+:root {
+  --accent-color: hsl(240, 100%, 70%);
+}
 :root,
 input,
 textarea {
@@ -50,26 +53,33 @@ h1 {
 
 
 /* Guide and buttons */
-.button-prime {
+.button-prime, .button-normal {
   display: inline-block;
   border: none;
   outline: none;
-  background-color: hsl(240, 100%, 70%);
   margin: 0px 5px;
   padding: 0.5em 1em;
   border-radius: 8px;
+  border: solid 2px var(--accent-color);
   cursor: pointer;
 
-  color: #fff;
   text-decoration: none;
   line-height: 1em;
 
   transition: opacity 0.2s linear;
 }
-.button-prime:hover {
+.button-prime {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+.button-normal {
+  background-color: hsla(0, 0%, 0%, 0);
+  color: var(--accent-color);
+}
+.button-prime:hover, .button-normal:hover {
   opacity: 0.6;
 }
-.button-prime:disabled {
+.button-prime:disabled, .button-normal:disabled {
   cursor: default;
   opacity: 0.4;
 }
