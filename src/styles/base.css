@@ -11,7 +11,8 @@
 }
 :root,
 input,
-textarea {
+textarea,
+button {
   font-family: sans-serif;
   border-radius: 0;
   font-size: 18px;
