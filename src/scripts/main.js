@@ -78,6 +78,13 @@ window.onload = function() {
     document.querySelector("#input-members").dispatchEvent(new Event("input"));  // For run input check
   });
 
+  // Button - Layout file output
+  document.querySelector("#output-layout-file").addEventListener("click", () => {
+    const layout = seateditor.getSeatArray();
+    const layout_str = JSON.stringify(layout);
+    export_as_download(new Blob([layout_str]), "layout.json");
+  });
+
   // Button - Generate seat table
   document.querySelector("#ctrl-generate").addEventListener("click", function() {
     if(isAllFieldsValid()) {
