@@ -78,6 +78,29 @@ window.onload = function() {
     document.querySelector("#input-members").dispatchEvent(new Event("input"));  // For run input check
   });
 
+  // Button - Layout file input
+  document.querySelector("#input-layout-file").addEventListener("input", async e => {
+    const file = e.target.files[0];
+    if(!file) return; // If no files input, do nothing
+
+    try {
+      const file_text = await file.text();
+      const file_json = JSON.parse(file_text);
+      seateditor.setSeatArray(file_json);
+      document.querySelector("#input-seats-x").value = file_json.length;
+      document.querySelector("#input-seats-y").value = file_json[0].length;
+    } catch(e) {
+      if(e.name === "SyntaxError")
+        alert("Failed to load the file:\nInvalid as a JSON file");
+      else
+        alert(e.message);
+    }
+
+    // Allow same file input again
+    e.target.type = "button";
+    e.target.type = "file";
+  });
+
   // Button - Layout file output
   document.querySelector("#output-layout-file").addEventListener("click", () => {
     const layout = seateditor.getSeatArray();

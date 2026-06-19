@@ -88,9 +88,9 @@ class SeatEditor {
   }
 
   /**
-   * Return seat type matrix array
+   * Get seat type as matrix
    *
-   * @returns {Array<number>} Seat type matrix array
+   * @returns {number[][]} Seat type matrix array
    */
   getSeatArray() {
     let ret = [];
@@ -102,6 +102,69 @@ class SeatEditor {
       }
     }
     return ret;
+  }
+
+  /**
+   * Set seat type as matrix
+   *
+   * @param {number[][]} seat_array type matrix array to apply
+   * @throws {TypeError} When passed object is not an Array
+   * @throws {RangeError} When passed matrix is not square
+   */
+  setSeatArray(seat_array) {
+    if(!seat_array instanceof Array)
+      throw new TypeError("Invalid format - Root is not array");
+
+    const seat_type_flat = seat_array.flat(1);
+
+    if(!seat_type_flat.every(e => typeof e === "number"))
+      throw new TypeError("Invalid format - Non number element detected");
+
+    if(!seat_type_flat.every(e => [0,1,2,3].includes(e))) // All elements need to be 0~3 value
+      throw new TypeError("Invalid format - Invalid element value detected");
+
+    const height_count = seat_array.length;
+    if(height_count === 0)
+      throw new RangeError("Invalid format - Empty array passed");
+    if(height_count > 20)
+      throw new RangeError("Invalid format - Too large height array passed");
+
+    // All row length need to be same
+    const row_lengths = seat_array.map(elem => elem.length);
+    if(!row_lengths.every(e => e === row_lengths[0]))
+      throw new RangeError("Invalid format - Row length not same");
+
+    const width_count = seat_array[0].length;
+    if(width_count === 0)
+      throw new RangeError("Invalid format - Row length is 0");
+    if(width_count > 20)
+      throw new RangeError("Invalid format - Too large width array passed");
+
+    this.modifyHeight(height_count);
+    this.modifyWidth(width_count);
+
+    this.print_ele.querySelectorAll(".seat-cell").forEach((e, i) => {
+      e.seatType = seat_type_flat[i];
+      e.classList.remove("seat-cell-normal", "seat-cell-priority", "seat-cell-unused", "seat-cell-none");
+      switch(seat_type_flat[i]) {
+        case 0:
+          e.classList.add("seat-cell-normal");
+          break;
+        case 1:
+          e.classList.add("seat-cell-priority");
+          break;
+        case 2:
+          e.classList.add("seat-cell-unused");
+          break;
+        case 3:
+          e.classList.add("seat-cell-none");
+          break;
+        default:
+          break;
+      }
+    });
+    // Seat counter update
+    this.print_ele.dispatchEvent(new Event("click"));
   }
 
   /**
@@ -176,10 +239,7 @@ class SeatEditor {
     if(3 < e.currentTarget.seatType)      { e.currentTarget.seatType = 0; }
     else if(e.currentTarget.seatType < 0) { e.currentTarget.seatType = 3; }
     // View modification
-    e.currentTarget.classList.remove("seat-cell-normal");
-    e.currentTarget.classList.remove("seat-cell-priority");
-    e.currentTarget.classList.remove("seat-cell-unused");
-    e.currentTarget.classList.remove("seat-cell-none");
+    e.currentTarget.classList.remove("seat-cell-normal", "seat-cell-priority", "seat-cell-unused", "seat-cell-none");
     switch(e.currentTarget.seatType) {
       case 0:
         e.currentTarget.classList.add("seat-cell-normal");
