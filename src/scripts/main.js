@@ -10,6 +10,10 @@
  * @event Window#load
  */
 window.onload = function() {
+  // Constants
+  const LS_KEY_MEMBER = "member-input";
+  const LS_KEY_LAYOUT = "layout-input";
+
   // InputCheck script attach
   new InputCheck(document.querySelector("#input-members"), "members");
   new InputCheck(document.querySelector("#input-seats-x"), "number");
@@ -64,6 +68,35 @@ window.onload = function() {
   document.querySelector("#seat-edit").addEventListener("contextmenu", checkSeatTableGeneratable);
   document.querySelector("#input-seats-x").addEventListener("change", checkSeatTableGeneratable);
   document.querySelector("#input-seats-y").addEventListener("change", checkSeatTableGeneratable);
+
+  // Auto restore
+  try { // Error suspension for when localstorage unavailable (throws SecurityError)
+    const member_input = localStorage.getItem(LS_KEY_MEMBER);
+    if(member_input) {
+      document.querySelector("#input-members").value = member_input;
+      document.querySelector("#input-members").dispatchEvent(new Event("input"));
+    }
+
+    const layout_input = localStorage.getItem(LS_KEY_LAYOUT);
+    seateditor.setSeatArray(JSON.parse(layout_input));
+  } catch(e) {
+    // Do nothing, continue other processes
+  }
+
+  // Auto store on close
+  window.addEventListener("beforeunload", () => {
+    const member_input = document.querySelector("#input-members").value;
+    if(member_input)
+      localStorage.setItem(LS_KEY_MEMBER, member_input);
+    else
+      localStorage.removeItem(LS_KEY_MEMBER)  // For initial value (empty), remove old memory
+
+    const layout_input = JSON.stringify(seateditor.getSeatArray());
+    if(layout_input != "[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]")
+      localStorage.setItem(LS_KEY_LAYOUT, layout_input);
+    else
+      localStorage.removeItem(LS_KEY_LAYOUT)  // For initial value (empty), remove old memory
+  });
 
   // Button - Text file input
   document.querySelector("#input-members-file").addEventListener("input", async e => {
