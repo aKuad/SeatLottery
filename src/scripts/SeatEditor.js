@@ -8,6 +8,8 @@
  * Seat editing field object
  */
 class SeatEditor {
+  static #SEAT_TYPE_NUM_TO_CLASS = ["seat-cell-normal", "seat-cell-priority", "seat-cell-unused", "seat-cell-none"];
+
   /**
    * @constructs
    * @param {object} print_ele
@@ -146,22 +148,7 @@ class SeatEditor {
     this.print_ele.querySelectorAll(".seat-cell").forEach((e, i) => {
       e.seatType = seat_type_flat[i];
       e.classList.remove("seat-cell-normal", "seat-cell-priority", "seat-cell-unused", "seat-cell-none");
-      switch(seat_type_flat[i]) {
-        case 0:
-          e.classList.add("seat-cell-normal");
-          break;
-        case 1:
-          e.classList.add("seat-cell-priority");
-          break;
-        case 2:
-          e.classList.add("seat-cell-unused");
-          break;
-        case 3:
-          e.classList.add("seat-cell-none");
-          break;
-        default:
-          break;
-      }
+      e.classList.add(SeatEditor.#SEAT_TYPE_NUM_TO_CLASS[seat_type_flat[i]]);
     });
     // Seat counter update
     this.print_ele.dispatchEvent(new Event("click"));
@@ -240,21 +227,6 @@ class SeatEditor {
     else if(e.currentTarget.seatType < 0) { e.currentTarget.seatType = 3; }
     // View modification
     e.currentTarget.classList.remove("seat-cell-normal", "seat-cell-priority", "seat-cell-unused", "seat-cell-none");
-    switch(e.currentTarget.seatType) {
-      case 0:
-        e.currentTarget.classList.add("seat-cell-normal");
-        break;
-      case 1:
-        e.currentTarget.classList.add("seat-cell-priority");
-        break;
-      case 2:
-        e.currentTarget.classList.add("seat-cell-unused");
-        break;
-      case 3:
-        e.currentTarget.classList.add("seat-cell-none");
-        break;
-      default:
-        break;
-    }
+    e.currentTarget.classList.add(SeatEditor.#SEAT_TYPE_NUM_TO_CLASS[e.currentTarget.seatType]);
   }
 }
