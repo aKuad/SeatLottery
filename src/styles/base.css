@@ -11,7 +11,8 @@
 }
 :root,
 input,
-textarea {
+textarea,
+button {
   font-family: sans-serif;
   border-radius: 0;
   font-size: 18px;
@@ -84,6 +85,35 @@ h1 {
   opacity: 0.4;
 }
 
+.button-arrow-up, .button-arrow-down, .button-arrow-down-to-up {
+  position: relative;
+}
+.button-arrow-up {
+  margin-top: 15px;
+}
+.button-arrow-down, .button-arrow-down-to-up {
+  margin-bottom: 15px;
+}
+.button-arrow-up::before, .button-arrow-down::before, .button-arrow-down-to-up::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid transparent;
+}
+.button-arrow-up::before {
+  border-bottom: 10px solid;
+  top: -22px;
+}
+.button-arrow-down::before {
+  border-top: 10px solid;
+  bottom: -22px;
+}
+.button-arrow-down-to-up::before {
+  border-bottom: 10px solid;
+  bottom: -11px;
+}
+
 .info-container {
   width: 450px;
   margin: 20px auto;
@@ -98,21 +128,7 @@ h1 {
 
 
 /* Input field */
-#input-members-file-label {
-  display: inline-block;
-  position: relative;
-  margin-top: 15px;
-}
-#input-members-file-label::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  margin-left: -10px;
-  border: 10px solid transparent;
-  border-bottom: 10px solid hsl(240, 100%, 70%);
-}
-#input-members-file {
+.input-core-overwrap {
   width: 100%;
   height: 100%;
   position: absolute;

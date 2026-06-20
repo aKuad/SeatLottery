@@ -20,6 +20,7 @@
     <script type="text/javascript" charset="UTF-8" src="./scripts/SeatEditor.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/MemberEditor.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/array_shuffle.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/export_as_download.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/print_seatresult.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/main.js"></script>
   </head>
@@ -51,14 +52,14 @@
         </table>
       </div>
       <div class="info-container" style="text-align: center;">
-        <input type="button" class="button-prime" id="ctrl-generate" value="座席表を生成" disabled>
+        <button class="button-prime" id="ctrl-generate" disabled>座席表を生成</button>
       </div>
       <div class="info-container" style="text-align: center;">
         <div class="info-label">メンバー</div>
         <textarea id="input-members" placeholder="1,鈴木 太郎,スズキ タロウ,0"></textarea>
-        <label id="input-members-file-label" class="button-normal" for="input-members-file">
+        <label class="button-normal button-arrow-up" for="input-members-file">
           テキストファイルを入力
-          <input type="file" id="input-members-file" accept=".txt,.csv">
+          <input type="file" id="input-members-file" class="input-core-overwrap" accept=".txt,.csv">
         </label>
       </div>
       <div class="info-container">
@@ -68,6 +69,14 @@
           <input type="number" id="input-seats-y" min="1" max="20" value="5">
         </div>
       </div>
+      <div class="info-container" style="text-align: center; margin-bottom: 0;">
+        レイアウトファイル:
+        <label class="button-normal button-arrow-down">
+          入力
+          <input type="file" id="input-layout-file" class="input-core-overwrap" accept=".json">
+        </label>
+        <button id="output-layout-file" class="button-normal button-arrow-down-to-up" >出力</button>
+      </div>
       <div id="seat-edit"></div>
       <div class="doc-table">教卓</div>
     </div>
@@ -76,8 +85,8 @@
       <div class="info-container no-print">必要に応じ、印刷ダイアログから拡大率、用紙方向などを調整してください。</div>
       <div class="info-container no-print">Excel などでレイアウトを独自に作成しますか？「CSVエクスポート」をご活用ください。</div>
       <div class="info-container no-print" style="text-align: center;">
-        <input type="button" class="button-normal" id="ctrl-back" value="前へ戻る">
-        <input type="button" class="button-prime" value="印刷" onclick="window.print();">
+        <button class="button-normal" id="ctrl-back">前へ戻る</button>
+        <button class="button-prime" onclick="window.print();">印刷</button>
         <a class="button-prime" id="ctrl-export" href="" download="Seat.csv">CSVエクスポート</a>
       </div>
       <input type="text" class="doc-title" placeholder="タイトル入力 (任意)">
