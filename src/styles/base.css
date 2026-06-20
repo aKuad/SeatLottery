@@ -26,6 +26,10 @@ h1 {
   text-align: center;
 }
 
+a {
+  color: var(--accent-color);
+}
+
 
 /* Stat view */
 .table-bodybase {
