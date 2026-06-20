@@ -76,6 +76,10 @@ window.onload = function() {
     document.querySelector("#input-members").value += file_text;
 
     document.querySelector("#input-members").dispatchEvent(new Event("input"));  // For run input check
+
+    // Allow same file input again
+    e.target.type = "button";
+    e.target.type = "file";
   });
 
   // Button - Layout file input
