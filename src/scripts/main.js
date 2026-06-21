@@ -120,8 +120,8 @@ window.onload = function() {
       const file_text = await file.text();
       const file_json = JSON.parse(file_text);
       seateditor.setSeatArray(file_json);
-      document.querySelector("#input-seats-x").value = file_json.length;
-      document.querySelector("#input-seats-y").value = file_json[0].length;
+      document.querySelector("#input-seats-x").value = file_json[0].length;
+      document.querySelector("#input-seats-y").value = file_json.length;
     } catch(e) {
       if(e.name === "SyntaxError")
         alert("Failed to load the file:\nInvalid as a JSON file");
