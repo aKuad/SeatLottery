@@ -78,7 +78,10 @@ window.onload = function() {
     }
 
     const layout_input = localStorage.getItem(LS_KEY_LAYOUT);
-    seateditor.setSeatArray(JSON.parse(layout_input));
+    const layout_json = JSON.parse(layout_input);
+    seateditor.setSeatArray(layout_json);
+    document.querySelector("#input-seats-x").value = layout_json[0].length;
+    document.querySelector("#input-seats-y").value = layout_json.length;
   } catch(e) {
     // Do nothing, continue other processes
   }
