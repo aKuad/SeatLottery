@@ -89,13 +89,13 @@ window.onload = function() {
     if(member_input)
       localStorage.setItem(LS_KEY_MEMBER, member_input);
     else
-      localStorage.removeItem(LS_KEY_MEMBER)  // For initial value (empty), remove old memory
+      localStorage.removeItem(LS_KEY_MEMBER); // For initial value (empty), remove old memory
 
     const layout_input = JSON.stringify(seateditor.getSeatArray());
     if(layout_input != "[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]")
       localStorage.setItem(LS_KEY_LAYOUT, layout_input);
     else
-      localStorage.removeItem(LS_KEY_LAYOUT)  // For initial value (empty), remove old memory
+      localStorage.removeItem(LS_KEY_LAYOUT); // For initial value, remove old memory
   });
 
   // Button - Text file input
