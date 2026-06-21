@@ -101,7 +101,7 @@ window.onload = function() {
       localStorage.removeItem(LS_KEY_LAYOUT); // For initial value, remove old memory
   });
 
-  // Button - Text file input
+  // Button - Members file input
   document.querySelector("#input-members-file").addEventListener("input", async e => {
     const file = e.target.files[0];
     if(!file) return; // If no files input, do nothing
@@ -112,6 +112,11 @@ window.onload = function() {
     document.querySelector("#input-members").value += file_text;
 
     document.querySelector("#input-members").dispatchEvent(new Event("input"));  // For run input check
+  });
+
+  // Button - Members input delete
+  document.querySelector("#members-delete").addEventListener("click", () => {
+    document.querySelector("#input-members").value = "";
   });
 
   // Button - Layout file input
@@ -142,6 +147,13 @@ window.onload = function() {
     const layout = seateditor.getSeatArray();
     const layout_str = JSON.stringify(layout);
     export_as_download(new Blob([layout_str]), "layout.json");
+  });
+
+  // Button - Layout reset
+  document.querySelector("#layout-reset").addEventListener("click", () => {
+    seateditor.setSeatArray([[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]);
+    document.querySelector("#input-seats-x").value = 6;
+    document.querySelector("#input-seats-y").value = 5;
   });
 
   // Button - Generate seat table
