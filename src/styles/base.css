@@ -8,6 +8,7 @@
 /* Root */
 :root {
   --accent-color: hsl(240, 100%, 70%);
+  --danger-color: hsl(0, 100%, 70%);
 }
 :root,
 input,
@@ -58,7 +59,7 @@ a {
 
 
 /* Guide and buttons */
-.button-prime, .button-normal {
+.button-prime, .button-danger, .button-normal {
   display: inline-block;
   border: none;
   outline: none;
@@ -77,14 +78,20 @@ a {
   background-color: var(--accent-color);
   color: #fff;
 }
+.button-danger {
+  padding: 0;
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--danger-color);
+}
 .button-normal {
-  background-color: hsla(0, 0%, 0%, 0);
+  background-color: transparent;
   color: var(--accent-color);
 }
-.button-prime:hover, .button-normal:hover {
+.button-prime:hover, .button-danger:hover, .button-normal:hover {
   opacity: 0.6;
 }
-.button-prime:disabled, .button-normal:disabled {
+.button-prime:disabled, .button-danger:disabled, .button-normal:disabled {
   cursor: default;
   opacity: 0.4;
 }

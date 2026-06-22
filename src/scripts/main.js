@@ -10,6 +10,10 @@
  * @event Window#load
  */
 window.onload = function() {
+  // Constants
+  const LS_KEY_MEMBER = "member-input";
+  const LS_KEY_LAYOUT = "layout-input";
+
   // InputCheck script attach
   new InputCheck(document.querySelector("#input-members"), "members");
   new InputCheck(document.querySelector("#input-seats-x"), "number");
@@ -65,7 +69,39 @@ window.onload = function() {
   document.querySelector("#input-seats-x").addEventListener("change", checkSeatTableGeneratable);
   document.querySelector("#input-seats-y").addEventListener("change", checkSeatTableGeneratable);
 
-  // Button - Text file input
+  // Auto restore
+  try { // Error suspension for when localstorage unavailable (throws SecurityError)
+    const member_input = localStorage.getItem(LS_KEY_MEMBER);
+    if(member_input) {
+      document.querySelector("#input-members").value = member_input;
+      document.querySelector("#input-members").dispatchEvent(new Event("input"));
+    }
+
+    const layout_input = localStorage.getItem(LS_KEY_LAYOUT);
+    const layout_json = JSON.parse(layout_input);
+    seateditor.setSeatArray(layout_json);
+    document.querySelector("#input-seats-x").value = layout_json[0].length;
+    document.querySelector("#input-seats-y").value = layout_json.length;
+  } catch(e) {
+    // Do nothing, continue other processes
+  }
+
+  // Auto store on close
+  window.addEventListener("beforeunload", () => {
+    const member_input = document.querySelector("#input-members").value;
+    if(member_input)
+      localStorage.setItem(LS_KEY_MEMBER, member_input);
+    else
+      localStorage.removeItem(LS_KEY_MEMBER); // For initial value (empty), remove old memory
+
+    const layout_input = JSON.stringify(seateditor.getSeatArray());
+    if(layout_input != "[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]")
+      localStorage.setItem(LS_KEY_LAYOUT, layout_input);
+    else
+      localStorage.removeItem(LS_KEY_LAYOUT); // For initial value, remove old memory
+  });
+
+  // Button - Members file input
   document.querySelector("#input-members-file").addEventListener("input", async e => {
     const file = e.target.files[0];
     if(!file) return; // If no files input, do nothing
@@ -82,6 +118,11 @@ window.onload = function() {
     e.target.type = "file";
   });
 
+  // Button - Members input delete
+  document.querySelector("#members-delete").addEventListener("click", () => {
+    document.querySelector("#input-members").value = "";
+  });
+
   // Button - Layout file input
   document.querySelector("#input-layout-file").addEventListener("input", async e => {
     const file = e.target.files[0];
@@ -91,8 +132,8 @@ window.onload = function() {
       const file_text = await file.text();
       const file_json = JSON.parse(file_text);
       seateditor.setSeatArray(file_json);
-      document.querySelector("#input-seats-x").value = file_json.length;
-      document.querySelector("#input-seats-y").value = file_json[0].length;
+      document.querySelector("#input-seats-x").value = file_json[0].length;
+      document.querySelector("#input-seats-y").value = file_json.length;
     } catch(e) {
       if(e.name === "SyntaxError")
         alert("Failed to load the file:\nInvalid as a JSON file");
@@ -110,6 +151,13 @@ window.onload = function() {
     const layout = seateditor.getSeatArray();
     const layout_str = JSON.stringify(layout);
     export_as_download(new Blob([layout_str]), "layout.json");
+  });
+
+  // Button - Layout reset
+  document.querySelector("#layout-reset").addEventListener("click", () => {
+    seateditor.setSeatArray([[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]);
+    document.querySelector("#input-seats-x").value = 6;
+    document.querySelector("#input-seats-y").value = 5;
   });
 
   // Button - Generate seat table
