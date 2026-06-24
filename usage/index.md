@@ -58,3 +58,11 @@ If you need, please fill title and/or note field. If the field is empty, it will
 You can print the result by browser function or click 'Print'.
 
 Note: The margin will not be adjusted automatically. If you need, please adjust in printing dialog.
+
+## Others
+
+### Input auto restore
+
+The members and seat layout input will be store on the browser, then will be restored automatically at next launch. If you want to discard these inputs (e.g. using at shared PC), please click 'Delete' / 'Reset' button.
+
+![Screen - Input delete/reset](./images-en/screen-en-7-result.webp)
