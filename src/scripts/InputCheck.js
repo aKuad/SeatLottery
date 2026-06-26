@@ -35,13 +35,10 @@ class InputCheck {
       case "members":
         this.element.isValid = false;
         this.element.addEventListener("input", function() {
-          if(!InputCheck.checkMembersInput(this.value)) {
+          if(!InputCheck.checkMembersInput(this.value))
             this.isValid = false;
-            this.classList.add("input-view-invalid");
-          } else {
+          else
             this.isValid = true;
-            this.classList.remove("input-view-invalid");
-          }
         });
         break;
 
@@ -60,12 +57,7 @@ class InputCheck {
    * @return {boolean} Follow specification rule or not
    */
   static checkMembersInput(value) {
-    if(value == "") { return false; }
-    let members = value.split("\n");
-    for(let i in members) {
-      if(members[i] == "") { continue; }  // Ignore empty line
-      if(members[i].split(",").length < 3) { return false; }
-    }
-    return true;
+    // When only \n or blank string, returns false (invalid)
+    return !/^\n*$/.test(value);
   }
 }
