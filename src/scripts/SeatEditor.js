@@ -21,7 +21,7 @@ class SeatEditor {
     this.width = 1;
     this.height = 1;
     // Create initial 1x1 cell
-    let row = document.createElement("div");
+    const row = document.createElement("div");
     row.classList.add("seat-row");
     row.appendChild(SeatEditor.createInitialCell());
     this.print_ele.appendChild(row);
@@ -42,7 +42,7 @@ class SeatEditor {
     }
     // Increase width
     while(this.width < width) {
-      let rows = this.print_ele.querySelectorAll(".seat-row");
+      const rows = this.print_ele.querySelectorAll(".seat-row");
       for(let i = 0; i < this.height; i++) {
         rows[i].appendChild(SeatEditor.createInitialCell());
       }
@@ -50,7 +50,7 @@ class SeatEditor {
     }
     // Decrease width
     while (this.width > width) {
-      let rows = this.print_ele.querySelectorAll(".seat-row");
+      const rows = this.print_ele.querySelectorAll(".seat-row");
       for(let i = 0; i < this.height; i++) {
         rows[i].removeChild(rows[i].lastChild);
       }
@@ -72,7 +72,7 @@ class SeatEditor {
     }
     // Increase height
     while(this.height < height) {
-      let row = document.createElement("div");
+      const row = document.createElement("div");
       row.classList.add("seat-row");
       for(let i = 0; i < this.width; i++) {
         row.appendChild(SeatEditor.createInitialCell());
@@ -95,8 +95,8 @@ class SeatEditor {
    * @returns {number[][]} Seat type matrix array
    */
   getSeatArray() {
-    let ret = [];
-    let cells = this.print_ele.querySelectorAll(".seat-cell");
+    const ret = [];
+    const cells = this.print_ele.querySelectorAll(".seat-cell");
     for(let i = 0; i < this.height; i++) {
       ret.push([]);
       for(let j = 0; j < this.width; j++) {
@@ -114,7 +114,7 @@ class SeatEditor {
    * @throws {RangeError} When passed matrix is not square
    */
   setSeatArray(seat_array) {
-    if(!seat_array instanceof Array)
+    if(!(seat_array instanceof Array))
       throw new TypeError("Invalid format - Root is not array");
 
     const seat_type_flat = seat_array.flat(1);
@@ -160,8 +160,8 @@ class SeatEditor {
    * @returns {object} Object format: {"normal": num, "priority": num, "unused": num, "none": num}
    */
   getSeatCount() {
-    let count = [0, 0, 0, 0];
-    let cells = this.print_ele.querySelectorAll(".seat-cell");
+    const count = [0, 0, 0, 0];
+    const cells = this.print_ele.querySelectorAll(".seat-cell");
     for(let i = 0; i < cells.length; i++) {
       count[cells[i].seatType]++;
     }
@@ -174,7 +174,7 @@ class SeatEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachSeatCounterNormal(target_ele) {
-    let handle = function() {
+    const handle = function() {
       target_ele.innerText = this.getSeatCount().normal;
     }.bind(this);
     this.print_ele.addEventListener("click",       handle);
@@ -188,7 +188,7 @@ class SeatEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachSeatCounterPriority(target_ele) {
-    let handle = function() {
+    const handle = function() {
       target_ele.innerText = this.getSeatCount().priority;
     }.bind(this);
     this.print_ele.addEventListener("click",       handle);
@@ -202,7 +202,7 @@ class SeatEditor {
    * @returns {object} Created element object
    */
   static createInitialCell() {
-    let cell = document.createElement("button");
+    const cell = document.createElement("button");
     cell.classList.add("seat-cell");
     cell.classList.add("seat-cell-edit");
     cell.classList.add("seat-cell-normal");

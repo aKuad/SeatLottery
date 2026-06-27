@@ -11,8 +11,8 @@
  * @returns Random shuffled array
  */
 function array_shuffle(org) {
-  let clo = org.slice();
-  let ret = [];
+  const clo = org.slice();
+  const ret = [];
   for(i = org.length; i > 0; i--) {
     ret.push(clo.splice(Math.floor(Math.random() * i), 1)[0]);
   }
