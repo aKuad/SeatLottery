@@ -12,7 +12,6 @@
 function print_seatresult(print_ele, seatarray, members) {
   const members_normal = array_shuffle(members.normal);
   const members_priority = array_shuffle(members.priority);
-  // let text_temp = "<ruby><rb>{name_b}</rb><rt>{name_r}</rt></ruby><br>[{num}]";
   print_ele.innerHTML = "";
   for(let i = seatarray.length - 1; i >= 0; i--) {
     const row = document.createElement("div");
