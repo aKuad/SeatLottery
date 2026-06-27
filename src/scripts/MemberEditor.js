@@ -22,22 +22,52 @@ class MemberEditor {
    * @returns {object} Member data (When invalid syntax, return null)
    */
   getMembersArray() {
-    let members = this.obj_ele.value.split("\n");
-    let ret = {"normal": [], "priority": []};
+    const lines = this.obj_ele.value.split("\n");
+    const member_array = {normal: [], priority: []};
 
-    for(let i = 0; i < members.length; i++) {
-      if(members[i] == "") { continue; }  // Ignore empty line
-      let m = members[i].split(",");
-      if(m.length < 3) { return null; }   // On too few columns
-      // On short syntax (3 columns)
-      if(m.length == 3) {
-        m.splice(2, 0, "");
+    lines.forEach(line => {
+      if(line === "") return;  // Ignore empty line
+
+      const line_parts = line.split(",", 4);
+      let is_priority = false;
+      let name = "";
+      let ruby = null;
+      let num = null;
+
+      switch(line_parts.length) {
+        case 1:
+          name = line_parts[0];
+          break;
+
+        case 2:
+          is_priority = line_parts[0] === "1";
+          name = line_parts[1];
+          break;
+
+        case 3:
+          is_priority = line_parts[0] === "1";
+          name = line_parts[1];
+          num = line_parts[2];
+          break;
+
+        case 4:
+          is_priority = line_parts[0] === "1";
+          name = line_parts[1];
+          ruby = line_parts[2];
+          num = line_parts[3];
+          break;
+
+        default:
+          break;
       }
-      if(m[3] == "1") { ret.priority.push(m); }
-      else            { ret.normal.push(m); }
-    }
 
-    return ret;
+      if(is_priority)
+        member_array.priority.push([name, ruby, num]);
+      else
+        member_array.normal.push([name, ruby, num]);
+    });
+
+    return member_array;
   }
 
   /**
