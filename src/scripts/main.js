@@ -181,21 +181,20 @@ window.onload = function() {
 
   // Button - Export as CSV
   document.querySelector("#ctrl-export").addEventListener("click", function() {
-    let ret = "";
+    const csv = [];
     const rows = document.querySelector("#seat-result").querySelectorAll(".seat-row");
     for(let i = 0; i < rows.length; i++) {
       const cols = rows[i].querySelectorAll(".seat-cell");
       const names = [];
       for(let j = 0; j < cols.length; j++) {
         const cell = cols[j].cloneNode(true);
-        if(cell.querySelector("rt")) {
-          cell.querySelector("rt").innerText = "";
-        }
+        if(cell.querySelector("rt"))
+          cell.querySelector("rt").innerText = "";  // Remove ruby
         names.push(cell.innerText.replace("[", " ["));
       }
-      ret = ret.concat(names);
-      ret += "\n";
+      csv.push(names.join());
+      csv.push("\n");
     }
-    this.href = URL.createObjectURL(new Blob([ret], {"type": "text/plain"}));
+    this.href = URL.createObjectURL(new Blob(csv, {"type": "text/plain"}));
   });
 }
