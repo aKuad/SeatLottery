@@ -82,7 +82,7 @@ window.onload = function() {
     seateditor.setSeatArray(layout_json);
     document.querySelector("#input-seats-x").value = layout_json[0].length;
     document.querySelector("#input-seats-y").value = layout_json.length;
-  } catch(e) {
+  } catch(_e) {
     // Do nothing, continue other processes
   }
 
