@@ -15,10 +15,10 @@ function print_seatresult(print_ele, seatarray, members) {
   // let text_temp = "<ruby><rb>{name_b}</rb><rt>{name_r}</rt></ruby><br>[{num}]";
   print_ele.innerHTML = "";
   for(let i = seatarray.length - 1; i >= 0; i--) {
-    let row = document.createElement("div");
+    const row = document.createElement("div");
     row.classList.add("seat-row");
     for(let j = 0; j < seatarray[i].length; j++) {
-      let col = document.createElement("div");
+      const col = document.createElement("div");
       col.classList.add("seat-cell");
       col.classList.add("seat-cell-result");
 

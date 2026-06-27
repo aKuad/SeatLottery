@@ -20,10 +20,10 @@ window.onload = function() {
   new InputCheck(document.querySelector("#input-seats-y"), "number");
 
   // Editing object create
-  let membereditor = new MemberEditor(document.querySelector("#input-members"));
-  let seateditor = new SeatEditor(document.querySelector("#seat-edit"),
-                                  document.querySelector("#input-seats-x").value,
-                                  document.querySelector("#input-seats-y").value);
+  const membereditor = new MemberEditor(document.querySelector("#input-members"));
+  const seateditor = new SeatEditor(document.querySelector("#seat-edit"),
+                                    document.querySelector("#input-seats-x").value,
+                                    document.querySelector("#input-seats-y").value);
   document.querySelector("#input-seats-x").addEventListener("change", function() {
     if(0 < this.value) { seateditor.modifyWidth(this.value); }
   });
@@ -43,8 +43,8 @@ window.onload = function() {
    * @returns {boolean} Is valid
    */
   function isAllFieldsValid() {
-    let seats = seateditor.getSeatCount();
-    let members = membereditor.getMembersArray();
+    const seats = seateditor.getSeatCount();
+    const members = membereditor.getMembersArray();
     if(members == null) { return false; }
     return document.querySelector("#input-members").isValid &&
            document.querySelector("#input-seats-x").isValid &&
@@ -182,12 +182,12 @@ window.onload = function() {
   // Button - Export as CSV
   document.querySelector("#ctrl-export").addEventListener("click", function() {
     let ret = "";
-    let rows = document.querySelector("#seat-result").querySelectorAll(".seat-row");
+    const rows = document.querySelector("#seat-result").querySelectorAll(".seat-row");
     for(let i = 0; i < rows.length; i++) {
-      let cols = rows[i].querySelectorAll(".seat-cell");
-      let names = [];
+      const cols = rows[i].querySelectorAll(".seat-cell");
+      const names = [];
       for(let j = 0; j < cols.length; j++) {
-        let cell = cols[j].cloneNode(true);
+        const cell = cols[j].cloneNode(true);
         if(cell.querySelector("rt")) {
           cell.querySelector("rt").innerText = "";
         }
