@@ -114,7 +114,7 @@ class SeatEditor {
    * @throws {RangeError} When passed matrix is not square
    */
   setSeatArray(seat_array) {
-    if(!seat_array instanceof Array)
+    if(!(seat_array instanceof Array))
       throw new TypeError("Invalid format - Root is not array");
 
     const seat_type_flat = seat_array.flat(1);
