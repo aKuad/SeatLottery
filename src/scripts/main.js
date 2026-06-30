@@ -13,6 +13,7 @@ window.onload = function() {
   // Constants
   const LS_KEY_MEMBER = "member-input";
   const LS_KEY_LAYOUT = "layout-input";
+  const LS_KEY_LAST_RESULT = "last-result";
 
   // InputCheck script attach
   new InputCheck(document.querySelector("#input-members"), "members");
@@ -78,10 +79,19 @@ window.onload = function() {
     }
 
     const layout_input = localStorage.getItem(LS_KEY_LAYOUT);
-    const layout_json = JSON.parse(layout_input);
-    seateditor.setSeatArray(layout_json);
-    document.querySelector("#input-seats-x").value = layout_json[0].length;
-    document.querySelector("#input-seats-y").value = layout_json.length;
+    if(layout_input) {
+      const layout_json = JSON.parse(layout_input);
+      seateditor.setSeatArray(layout_json);
+      document.querySelector("#input-seats-x").value = layout_json[0].length;
+      document.querySelector("#input-seats-y").value = layout_json.length;
+    }
+
+    const last_result = localStorage.getItem(LS_KEY_LAST_RESULT);
+    if(last_result) {
+      document.querySelector("#seat-result").innerHTML = last_result;
+      document.querySelector("#ctrl-last-result-redisplay").disabled = false;
+      document.querySelector("#ctrl-last-result-discard").disabled = false;
+    }
   } catch(_e) {
     // Do nothing, continue other processes
   }
@@ -168,9 +178,27 @@ window.onload = function() {
                        membereditor.getMembersArray());
       document.querySelector("#view-seatset").style.display = "none";
       document.querySelector("#view-result").style.display = "";
+
+      localStorage.setItem(LS_KEY_LAST_RESULT, document.querySelector("#seat-result").innerHTML);
+      document.querySelector("#ctrl-last-result-redisplay").disabled = false;
+      document.querySelector("#ctrl-last-result-discard").disabled = false;
+
     } else {
       alert("Incomplete inputs. Please complete all inputs.");
     }
+  });
+
+  // Button - Redisplay last result
+  document.querySelector("#ctrl-last-result-redisplay").addEventListener("click", () => {
+    document.querySelector("#view-seatset").style.display = "none";
+    document.querySelector("#view-result").style.display = "";
+  });
+
+  // Button - Discard last result
+  document.querySelector("#ctrl-last-result-discard").addEventListener("click", () => {
+    localStorage.removeItem(LS_KEY_LAST_RESULT);
+    document.querySelector("#ctrl-last-result-redisplay").disabled = true;
+    document.querySelector("#ctrl-last-result-discard").disabled = true;
   });
 
   // Button - Back to edit page
