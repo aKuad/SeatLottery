@@ -160,7 +160,7 @@ window.onload = function() {
   document.querySelector("#output-layout-file").addEventListener("click", () => {
     const layout = seateditor.getSeatArray();
     const layout_str = JSON.stringify(layout);
-    export_as_download(new Blob([layout_str]), "layout.json");
+    export_as_download(new Blob([layout_str], { type: "application/json" }), "layout.json");
   });
 
   // Button - Layout reset
@@ -223,6 +223,6 @@ window.onload = function() {
       csv.push(names.join());
       csv.push("\n");
     }
-    this.href = URL.createObjectURL(new Blob(csv, {"type": "text/plain"}));
+    export_as_download(new Blob(csv, { type: "text/csv" }), "seat.csv");
   });
 }
