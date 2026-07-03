@@ -9,7 +9,7 @@
  *
  * @event Window#load
  */
-window.onload = function() {
+window.addEventListener("load", function() {
   // Constants
   const LS_KEY_MEMBER = "member-input";
   const LS_KEY_LAYOUT = "layout-input";
@@ -225,4 +225,4 @@ window.onload = function() {
     }
     export_as_download(new Blob(csv, { type: "text/csv" }), "seat.csv");
   });
-}
+});
