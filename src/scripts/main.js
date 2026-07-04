@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
    *
    * @returns {boolean} Is valid
    */
-  function isAllFieldsValid() {
+  const isAllFieldsValid = () => {
     const seats = seateditor.getSeatCount();
     const members = membereditor.getMembersArray();
     if(members == null) { return false; }
@@ -61,7 +61,7 @@ window.addEventListener("load", () => {
    * @event input-seats-x#change
    * @event input-seats-y#change
    */
-  function checkSeatTableGeneratable() {
+  const checkSeatTableGeneratable = () => {
     document.querySelector("#ctrl-generate").disabled = !isAllFieldsValid();
   }
   document.querySelector("#input-members").addEventListener("input", checkSeatTableGeneratable);

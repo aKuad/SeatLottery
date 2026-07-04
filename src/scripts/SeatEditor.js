@@ -174,9 +174,9 @@ class SeatEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachSeatCounterNormal(target_ele) {
-    const handle = function() {
+    const handle = () => {
       target_ele.innerText = this.getSeatCount().normal;
-    }.bind(this);
+    };
     this.print_ele.addEventListener("click",       handle);
     this.print_ele.addEventListener("contextmenu", handle);
     this.print_ele.dispatchEvent(new Event("click"));
@@ -188,9 +188,9 @@ class SeatEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachSeatCounterPriority(target_ele) {
-    const handle = function() {
+    const handle = () => {
       target_ele.innerText = this.getSeatCount().priority;
-    }.bind(this);
+    };
     this.print_ele.addEventListener("click",       handle);
     this.print_ele.addEventListener("contextmenu", handle);
     this.print_ele.dispatchEvent(new Event("click"));
@@ -208,7 +208,7 @@ class SeatEditor {
     cell.classList.add("seat-cell-normal");
     cell.seatType = 0;
     cell.addEventListener("click", {"handleEvent": SeatEditor.seatTypeChange, "isIncrease": true});
-    cell.oncontextmenu = function() { return false; };
+    cell.oncontextmenu = () => false;
     cell.addEventListener("contextmenu", {"handleEvent": SeatEditor.seatTypeChange, "isIncrease": false});
     return cell;
   }
