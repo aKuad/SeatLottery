@@ -207,9 +207,13 @@ class SeatEditor {
     cell.classList.add("seat-cell-edit");
     cell.classList.add("seat-cell-normal");
     cell.seatType = 0;
-    cell.addEventListener("click", {"handleEvent": SeatEditor.seatTypeChange, "isIncrease": true});
-    cell.oncontextmenu = () => false;
-    cell.addEventListener("contextmenu", {"handleEvent": SeatEditor.seatTypeChange, "isIncrease": false});
+    cell.addEventListener("click", e => {
+      SeatEditor.#seatTypeChange(e.target, true);
+    });
+    cell.addEventListener("contextmenu", e => {
+      e.preventDefault();
+      SeatEditor.#seatTypeChange(e.target, false);
+    });
     return cell;
   }
 
@@ -217,16 +221,17 @@ class SeatEditor {
    * Seat cell editing event
    *
    * @event HTMLDivElement#click
-   * @param {Object} e PointerEvent
+   * @param {HTMLButtonElement} cell_elem Seat cell element to change type
+   * @param {boolean} is_increase true to set to next state, false to back to previous state
    */
-  static seatTypeChange(e) {
+  static #seatTypeChange(cell_elem, is_increase) {
     // Seat type number switch
-    if(this.isIncrease) { e.currentTarget.seatType++; }
-    else                { e.currentTarget.seatType--; }
-    if(3 < e.currentTarget.seatType)      { e.currentTarget.seatType = 0; }
-    else if(e.currentTarget.seatType < 0) { e.currentTarget.seatType = 3; }
+    if(is_increase) { cell_elem.seatType++; }
+    else           { cell_elem.seatType--; }
+    if(3 < cell_elem.seatType)      { cell_elem.seatType = 0; }
+    else if(cell_elem.seatType < 0) { cell_elem.seatType = 3; }
     // View modification
-    e.currentTarget.classList.remove("seat-cell-normal", "seat-cell-priority", "seat-cell-unused", "seat-cell-none");
-    e.currentTarget.classList.add(SeatEditor.#SEAT_TYPE_NUM_TO_CLASS[e.currentTarget.seatType]);
+    cell_elem.classList.remove("seat-cell-normal", "seat-cell-priority", "seat-cell-unused", "seat-cell-none");
+    cell_elem.classList.add(SeatEditor.#SEAT_TYPE_NUM_TO_CLASS[cell_elem.seatType]);
   }
 }
