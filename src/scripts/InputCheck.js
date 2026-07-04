@@ -21,24 +21,24 @@ class InputCheck {
     switch(this.type) {
       case "number":
         this.element.isValid = true;
-        this.element.addEventListener("change", function() {
-          if(this.value <= 0 || 20 < this.value) {
-            this.isValid = false;
-            this.classList.add("input-view-invalid");
+        this.element.addEventListener("change", e => {
+          if(e.target.value <= 0 || 20 < e.target.value) {
+            e.target.isValid = false;
+            e.target.classList.add("input-view-invalid");
           } else {
-            this.isValid = true;
-            this.classList.remove("input-view-invalid");
+            e.target.isValid = true;
+            e.target.classList.remove("input-view-invalid");
           }
         });
         break;
 
       case "members":
         this.element.isValid = false;
-        this.element.addEventListener("input", function() {
-          if(!InputCheck.checkMembersInput(this.value))
-            this.isValid = false;
+        this.element.addEventListener("input", e => {
+          if(!InputCheck.checkMembersInput(e.target.value))
+            e.target.isValid = false;
           else
-            this.isValid = true;
+            e.target.isValid = true;
         });
         break;
 

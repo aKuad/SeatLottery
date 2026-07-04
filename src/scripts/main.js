@@ -9,7 +9,7 @@
  *
  * @event Window#load
  */
-window.addEventListener("load", function() {
+window.addEventListener("load", () => {
   // Constants
   const LS_KEY_MEMBER = "member-input";
   const LS_KEY_LAYOUT = "layout-input";
@@ -25,11 +25,11 @@ window.addEventListener("load", function() {
   const seateditor = new SeatEditor(document.querySelector("#seat-edit"),
                                     document.querySelector("#input-seats-x").value,
                                     document.querySelector("#input-seats-y").value);
-  document.querySelector("#input-seats-x").addEventListener("change", function() {
-    if(0 < this.value) { seateditor.modifyWidth(this.value); }
+  document.querySelector("#input-seats-x").addEventListener("change", e => {
+    if(0 < e.target.value) { seateditor.modifyWidth(e.target.value); }
   });
-  document.querySelector("#input-seats-y").addEventListener("change", function() {
-    if(0 < this.value) { seateditor.modifyHeight(this.value); }
+  document.querySelector("#input-seats-y").addEventListener("change", e => {
+    if(0 < e.target.value) { seateditor.modifyHeight(e.target.value); }
   });
 
   // Status view
@@ -171,7 +171,7 @@ window.addEventListener("load", function() {
   });
 
   // Button - Generate seat table
-  document.querySelector("#ctrl-generate").addEventListener("click", function() {
+  document.querySelector("#ctrl-generate").addEventListener("click", () => {
     if(isAllFieldsValid()) {
       print_seatresult(document.querySelector("#seat-result"),
                        seateditor.getSeatArray(),
@@ -202,13 +202,13 @@ window.addEventListener("load", function() {
   });
 
   // Button - Back to edit page
-  document.querySelector("#ctrl-back").addEventListener("click", function() {
+  document.querySelector("#ctrl-back").addEventListener("click", () => {
     document.querySelector("#view-seatset").style.display = "";
     document.querySelector("#view-result").style.display = "none";
   });
 
   // Button - Export as CSV
-  document.querySelector("#ctrl-export").addEventListener("click", function() {
+  document.querySelector("#ctrl-export").addEventListener("click", () => {
     const csv = [];
     const rows = document.querySelector("#seat-result").querySelectorAll(".seat-row");
     for(let i = 0; i < rows.length; i++) {
