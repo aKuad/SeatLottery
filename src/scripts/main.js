@@ -131,6 +131,7 @@ window.addEventListener("load", () => {
   // Button - Members input delete
   document.querySelector("#members-delete").addEventListener("click", () => {
     document.querySelector("#input-members").value = "";
+    document.querySelector("#input-members").dispatchEvent(new Event("input"));  // For run input check
   });
 
   // Button - Layout file input
