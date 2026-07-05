@@ -67,7 +67,10 @@ class MemberEditor {
         member_array.normal.push([name, ruby, num]);
     });
 
-    return member_array;
+    if(member_array.priority.length || member_array.normal.length)
+      return member_array;
+    else
+      return null;
   }
 
   /**
