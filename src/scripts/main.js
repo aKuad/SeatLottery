@@ -9,7 +9,7 @@
  *
  * @event Window#load
  */
-window.onload = function() {
+window.addEventListener("load", () => {
   // Constants
   const LS_KEY_MEMBER = "member-input";
   const LS_KEY_LAYOUT = "layout-input";
@@ -25,11 +25,11 @@ window.onload = function() {
   const seateditor = new SeatEditor(document.querySelector("#seat-edit"),
                                     document.querySelector("#input-seats-x").value,
                                     document.querySelector("#input-seats-y").value);
-  document.querySelector("#input-seats-x").addEventListener("change", function() {
-    if(0 < this.value) { seateditor.modifyWidth(this.value); }
+  document.querySelector("#input-seats-x").addEventListener("change", e => {
+    if(0 < e.target.value) { seateditor.modifyWidth(e.target.value); }
   });
-  document.querySelector("#input-seats-y").addEventListener("change", function() {
-    if(0 < this.value) { seateditor.modifyHeight(this.value); }
+  document.querySelector("#input-seats-y").addEventListener("change", e => {
+    if(0 < e.target.value) { seateditor.modifyHeight(e.target.value); }
   });
 
   // Status view
@@ -43,7 +43,7 @@ window.onload = function() {
    *
    * @returns {boolean} Is valid
    */
-  function isAllFieldsValid() {
+  const isAllFieldsValid = () => {
     const seats = seateditor.getSeatCount();
     const members = membereditor.getMembersArray();
     if(members == null) { return false; }
@@ -61,7 +61,7 @@ window.onload = function() {
    * @event input-seats-x#change
    * @event input-seats-y#change
    */
-  function checkSeatTableGeneratable() {
+  const checkSeatTableGeneratable = () => {
     document.querySelector("#ctrl-generate").disabled = !isAllFieldsValid();
   }
   document.querySelector("#input-members").addEventListener("input", checkSeatTableGeneratable);
@@ -171,7 +171,7 @@ window.onload = function() {
   });
 
   // Button - Generate seat table
-  document.querySelector("#ctrl-generate").addEventListener("click", function() {
+  document.querySelector("#ctrl-generate").addEventListener("click", () => {
     if(isAllFieldsValid()) {
       print_seatresult(document.querySelector("#seat-result"),
                        seateditor.getSeatArray(),
@@ -202,13 +202,13 @@ window.onload = function() {
   });
 
   // Button - Back to edit page
-  document.querySelector("#ctrl-back").addEventListener("click", function() {
+  document.querySelector("#ctrl-back").addEventListener("click", () => {
     document.querySelector("#view-seatset").style.display = "";
     document.querySelector("#view-result").style.display = "none";
   });
 
   // Button - Export as CSV
-  document.querySelector("#ctrl-export").addEventListener("click", function() {
+  document.querySelector("#ctrl-export").addEventListener("click", () => {
     const csv = [];
     const rows = document.querySelector("#seat-result").querySelectorAll(".seat-row");
     for(let i = 0; i < rows.length; i++) {
@@ -225,4 +225,4 @@ window.onload = function() {
     }
     export_as_download(new Blob(csv, { type: "text/csv" }), "seat.csv");
   });
-}
+});

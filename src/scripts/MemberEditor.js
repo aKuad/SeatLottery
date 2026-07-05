@@ -76,14 +76,13 @@ class MemberEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachMemberCounterNormal(target_ele) {
-    function handle() {
-      if(this.getter()) {
-        target_ele.innerText = this.getter().normal.length;
+    this.obj_ele.addEventListener("input", () => {
+      if(this.getMembersArray()) {
+        target_ele.innerText = this.getMembersArray().normal.length;
       } else {
         target_ele.innerText = "-";
       }
-    }
-    this.obj_ele.addEventListener("input", {"getter": this.getMembersArray, "obj_ele": this.obj_ele, "handleEvent": handle});
+    });
     target_ele.innerText = "-";
   }
 
@@ -93,14 +92,13 @@ class MemberEditor {
    * @param {object} target_ele Print target HTMLElement
    */
   attachMemberCounterPriority(target_ele) {
-    function handle() {
-      if(this.getter()) {
-        target_ele.innerText = this.getter().priority.length;
+    this.obj_ele.addEventListener("input", () => {
+      if(this.getMembersArray()) {
+        target_ele.innerText = this.getMembersArray().priority.length;
       } else {
         target_ele.innerText = "-";
       }
-    }
-    this.obj_ele.addEventListener("input", {"getter": this.getMembersArray, "obj_ele": this.obj_ele, "handleEvent": handle});
+    });
     target_ele.innerText = "-";
   }
 }
