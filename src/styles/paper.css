@@ -19,6 +19,11 @@
   line-height: 1.5em;
 }
 
+.doc-desc-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .doc-desc {
   display: block;
   width: 12cm;
@@ -32,6 +37,7 @@
   font-size: 1rem;
   line-height: 1.5em;
 }
+
 @media print {
   .doc-title:placeholder-shown {
     display: none;
