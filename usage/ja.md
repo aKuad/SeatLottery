@@ -20,7 +20,9 @@ GitHub Pages 上で利用できます。こちらへアクセスしてくださ�
 
 入力例:
 
-![Screen - Member input](./images-ja/screen-ja-2-member.webp)
+![Screen - Member input](./images-ja/screen-ja-2-member-1.webp)
+
+![Screen - Member input](./images-ja/screen-ja-3-member-2.webp)
 
 フリガナが不要な場合は、以下の形式で記述します。
 

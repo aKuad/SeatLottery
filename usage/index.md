@@ -18,9 +18,11 @@ Please input members with following this syntax.
 Number,Name,Normal or Priority (0 or 1)
 ```
 
-Example of input:
+Example input:
 
-![Screen - Member input](images-en/screen-en-2-member.webp)
+![Screen - Member input](images-en/screen-en-2-member-1.webp)
+
+![Screen - Member input](images-en/screen-en-3-member-2.webp)
 
 Note: The 'Number' field makes no errors when including string, duplicated and/or unsorted.
 
