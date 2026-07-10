@@ -67,4 +67,4 @@ Note: The margin will not be adjusted automatically. If you need, please adjust 
 
 The members and seat layout input will be store on the browser, then will be restored automatically at next launch. If you want to discard these inputs (e.g. using at shared PC), please click 'Delete' / 'Reset' button.
 
-![Screen - Input delete/reset](./images-en/screen-en-8-result.webp)
+![Screen - Input delete/reset](./images-en/screen-en-8-input-discard.webp)

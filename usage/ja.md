@@ -75,4 +75,4 @@ Note: 余白は自動調整されないため、必要に応じてブラウザ�
 
 入力したメンバーと座席情報は、ご利用のブラウザ内に保存され、次回起動時に自動で復元されます。入力を破棄したい場合 (共有 PC のご利用であるなど) は、入力部近くの削除/リセットボタンを押下してください。
 
-![Screen - Input delete/reset](./images-ja/screen-ja-8-result.webp)
+![Screen - Input delete/reset](./images-ja/screen-ja-8-input-discard.webp)
