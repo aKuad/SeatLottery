@@ -43,9 +43,9 @@ Note: 番号は、文字列を含んでいても、昇順/降順に並べられ�
 * 未 - 未使用の座席
 * 空 - 座席が配置されていない箇所
 
-![Screen - Seat sample (edit)](./images-ja/screen-ja-3-seatedit.webp)
+![Screen - Seat sample (edit)](./images-ja/screen-ja-4-seatedit.webp)
 
-![Screen - Seat sample (result)](./images-ja/screen-ja-4-seatsample.webp)
+![Screen - Seat sample (result)](./images-ja/screen-ja-5-seatsample.webp)
 
 ## 4. 座席表生成
 
@@ -55,11 +55,11 @@ Note: 番号は、文字列を含んでいても、昇順/降順に並べられ�
 * 座席数に正しい値 (1以上 20以下) が入力されている。
 * メンバー数よりも座席数が上回っている。(一般、優先共に)
 
-![Screen - Seat table generate](./images-ja/screen-ja-5-generate.webp)
+![Screen - Seat table generate](./images-ja/screen-ja-6-generate.webp)
 
 「座席表を生成」ボタンを押すと、設定された座席表にランダムでメンバーが割り振られた座席表が表示されます。
 
-![Screen - Result](./images-ja/screen-ja-6-result.webp)
+![Screen - Result](./images-ja/screen-ja-7-result.webp)
 
 必要に応じ、タイトル欄や備考欄に必要事項を入力してください。入力が空のときは、印刷時にフィールドが非表示になります。
 
@@ -73,4 +73,4 @@ Note: 余白は自動調整されないため、必要に応じてブラウザ�
 
 入力したメンバーと座席情報は、ご利用のブラウザ内に保存され、次回起動時に自動で復元されます。入力を破棄したい場合 (共有 PC のご利用であるなど) は、入力部近くの削除/リセットボタンを押下してください。
 
-![Screen - Input delete/reset](./images-ja/screen-ja-7-result.webp)
+![Screen - Input delete/reset](./images-ja/screen-ja-8-result.webp)
