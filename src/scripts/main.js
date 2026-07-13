@@ -14,6 +14,9 @@ window.addEventListener("load", () => {
   const LS_KEY_MEMBER = "member-input";
   const LS_KEY_LAYOUT = "layout-input";
   const LS_KEY_LAST_RESULT = "last-result";
+  const LS_KEY_PRINT_TITLE = "print-title";
+  const LS_KEY_PRINT_NOTE_L = "print-note-left";
+  const LS_KEY_PRINT_NOTE_R = "print-note-right";
 
   // InputCheck script attach
   new InputCheck(document.querySelector("#input-members"), "members");
@@ -92,6 +95,10 @@ window.addEventListener("load", () => {
       document.querySelector("#ctrl-last-result-redisplay").disabled = false;
       document.querySelector("#ctrl-last-result-discard").disabled = false;
     }
+
+    document.querySelector("#input-title").value      = localStorage.getItem(LS_KEY_PRINT_TITLE);
+    document.querySelector("#input-note-left").value  = localStorage.getItem(LS_KEY_PRINT_NOTE_L);
+    document.querySelector("#input-note-right").value = localStorage.getItem(LS_KEY_PRINT_NOTE_R);
   } catch(_e) {
     // Do nothing, continue other processes
   }
@@ -109,6 +116,24 @@ window.addEventListener("load", () => {
       localStorage.setItem(LS_KEY_LAYOUT, layout_input);
     else
       localStorage.removeItem(LS_KEY_LAYOUT); // For initial value, remove old memory
+
+    const input_title = document.querySelector("#input-title").value;
+    if(input_title)
+      localStorage.setItem(LS_KEY_PRINT_TITLE, input_title);
+    else
+      localStorage.removeItem(LS_KEY_PRINT_TITLE);
+
+    const input_note_left = document.querySelector("#input-note-left").value;
+    if(input_note_left)
+      localStorage.setItem(LS_KEY_PRINT_NOTE_L, input_note_left);
+    else
+      localStorage.removeItem(LS_KEY_PRINT_NOTE_L);
+
+    const input_note_right = document.querySelector("#input-note-right").value;
+    if(input_note_right)
+      localStorage.setItem(LS_KEY_PRINT_NOTE_R, input_note_right);
+    else
+      localStorage.removeItem(LS_KEY_PRINT_NOTE_R);
   });
 
   // Button - Members file input
@@ -198,6 +223,9 @@ window.addEventListener("load", () => {
   // Button - Discard last result
   document.querySelector("#ctrl-last-result-discard").addEventListener("click", () => {
     localStorage.removeItem(LS_KEY_LAST_RESULT);
+    document.querySelector("#input-title").value      = ""; // Delete field input
+    document.querySelector("#input-note-left").value  = "";
+    document.querySelector("#input-note-right").value = "";
     document.querySelector("#ctrl-last-result-redisplay").disabled = true;
     document.querySelector("#ctrl-last-result-discard").disabled = true;
   });
