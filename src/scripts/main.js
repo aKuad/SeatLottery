@@ -223,9 +223,6 @@ window.addEventListener("load", () => {
   // Button - Discard last result
   document.querySelector("#ctrl-last-result-discard").addEventListener("click", () => {
     localStorage.removeItem(LS_KEY_LAST_RESULT);
-    localStorage.removeItem(LS_KEY_PRINT_TITLE);
-    localStorage.removeItem(LS_KEY_PRINT_NOTE_L);
-    localStorage.removeItem(LS_KEY_PRINT_NOTE_R);
     document.querySelector("#input-title").value      = ""; // Delete field input
     document.querySelector("#input-note-left").value  = "";
     document.querySelector("#input-note-right").value = "";
