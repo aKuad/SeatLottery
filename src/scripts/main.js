@@ -117,6 +117,11 @@ window.addEventListener("load", () => {
     else
       localStorage.removeItem(LS_KEY_LAYOUT); // For initial value, remove old memory
 
+    if(document.querySelector("#ctrl-last-result-redisplay").disabled === false)
+      localStorage.setItem(LS_KEY_LAST_RESULT, document.querySelector("#seat-result").innerHTML);
+    else
+      localStorage.removeItem(LS_KEY_LAST_RESULT);
+
     const input_title = document.querySelector("#input-title").value;
     if(input_title)
       localStorage.setItem(LS_KEY_PRINT_TITLE, input_title);
@@ -205,7 +210,6 @@ window.addEventListener("load", () => {
       document.querySelector("#view-seatset").style.display = "none";
       document.querySelector("#view-result").style.display = "";
 
-      localStorage.setItem(LS_KEY_LAST_RESULT, document.querySelector("#seat-result").innerHTML);
       document.querySelector("#ctrl-last-result-redisplay").disabled = false;
       document.querySelector("#ctrl-last-result-discard").disabled = false;
 
@@ -222,7 +226,6 @@ window.addEventListener("load", () => {
 
   // Button - Discard last result
   document.querySelector("#ctrl-last-result-discard").addEventListener("click", () => {
-    localStorage.removeItem(LS_KEY_LAST_RESULT);
     document.querySelector("#input-title").value      = ""; // Delete field input
     document.querySelector("#input-note-left").value  = "";
     document.querySelector("#input-note-right").value = "";
