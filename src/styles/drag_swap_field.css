@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/**
+ * drag_swap_field.css
+ *
+ * Author: aKuad
+ */
+
+.drag-swap-from, .drag-swap-to {
+  position: relative;
+}
+.drag-swap-from::after, .drag-swap-to::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.4;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  content: "";
+}
+
+.drag-swap-from::after {
+  background-color: hsl(120, 100%, 80%);
+}
+.drag-swap-to::after {
+  background-color: hsl(240, 100%, 80%);
+}
