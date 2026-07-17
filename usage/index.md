@@ -69,6 +69,18 @@ Note: The margin will not be adjusted automatically. If you need, please adjust 
 
 ### Input auto restore
 
-The members and seat layout input will be store on the browser, then will be restored automatically at next launch. If you want to discard these inputs (e.g. using at shared PC), please click 'Delete' / 'Reset' button.
+The members and seat layout input will be store on the browser, then restored automatically at next launch.
+
+If you want to discard these inputs manually (e.g. using at shared PC), please click 'Delete' / 'Reset' button.
 
 ![Screen - Input delete/reset](./images-en/screen-en-8-input-discard.webp)
+
+Note: On private browse mode, it will be discarded automatically by browser's specification.
+
+### Last result redisplay
+
+You can redisplay last result. It will be store on the browser, then redisplay available even if you close browser.
+
+If you want to discard it manually, click 'Discard' button.
+
+Note: On private browse mode, it will be discarded automatically by browser's specification.
