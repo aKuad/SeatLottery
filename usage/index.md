@@ -12,11 +12,16 @@ Please clone this repository (download code), and just open `src/index.html` in 
 
 ## 2. Input members
 
-Please input members with following this syntax.
+Please input members. Syntax is below:
 
 ```txt
-Number,Name,Normal or Priority (0 or 1)
+Priority (0 or 1),Name,Ruby,Number
+Priority (0 or 1),Name,Number
+Priority (0 or 1),Name
+Name
 ```
+
+Priority, Ruby and Number input is optional.
 
 Example input:
 
@@ -45,9 +50,8 @@ Click (left or right) seat block to switch seat type 'Normal, Priority, Unused o
 
 'Generate seat table' button will be enabled on these requirements are fulfilled.
 
-* Member input is following correct syntax
 * Seat count of rows and columns are specified correct value (1 <= value <= 20)
-* Seat count is over than member count (both Normal or Priority)
+* Seat count is over than member count (both Normal and Priority)
 
 ![Screen - Seat table generate](./images-en/screen-en-6-generate.webp)
 
