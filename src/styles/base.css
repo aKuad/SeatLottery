@@ -137,6 +137,12 @@ a {
   text-align: left;
 }
 
+.info-tip {
+  text-align: center;
+  font-style: italic;
+  color: hsl(0, 0%, 40%);
+}
+
 
 /* Input field */
 .input-core-overwrap {
