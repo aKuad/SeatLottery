@@ -23,9 +23,3 @@
 .input-view-invalid {
   border-bottom-color: hsl(0, 100%, 70%);
 }
-
-@media print {
-  .no-print {
-    display: none;
-  }
-}

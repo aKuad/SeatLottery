@@ -45,6 +45,9 @@
   .doc-desc:placeholder-shown {
     display: none;
   }
+  .no-print {
+    display: none;
+  }
 }
 
 .doc-table {

@@ -13,6 +13,7 @@
     <meta property="og:url" content="https://akuad.github.io/SeatLottery/ja.html">
     <link rel="stylesheet" href="./styles/InputCheck.css">
     <link rel="stylesheet" href="./styles/SeatEditor.css">
+    <link rel="stylesheet" href="./styles/drag_swap_field.css">
     <link rel="stylesheet" href="./styles/paper.css">
     <link rel="stylesheet" href="./styles/base.css">
     <title>座席抽選プログラム</title>
@@ -20,6 +21,7 @@
     <script type="text/javascript" charset="UTF-8" src="./scripts/SeatEditor.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/MemberEditor.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/array_shuffle.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="./scripts/drag_swap_field.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/export_as_download.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/print_seatresult.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./scripts/main.js"></script>
@@ -97,6 +99,7 @@
         <button class="button-prime" id="ctrl-export">CSVエクスポート</button>
       </div>
       <input type="text" id="input-title" class="doc-title" placeholder="タイトル (任意)">
+      <div class="info-container info-tip no-print">ドラッグ&ドロップで席を入れ替え</div>
       <div id="seat-result"></div>
       <div class="doc-table">教卓</div>
       <div class="doc-desc-container">

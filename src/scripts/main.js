@@ -92,6 +92,7 @@ window.addEventListener("load", () => {
     const last_result = localStorage.getItem(LS_KEY_LAST_RESULT);
     if(last_result) {
       document.querySelector("#seat-result").innerHTML = last_result;
+      drag_swap_field(document.querySelector("#view-result"), "seat-cell-result");
       document.querySelector("#ctrl-last-result-redisplay").disabled = false;
       document.querySelector("#ctrl-last-result-discard").disabled = false;
     }
@@ -207,6 +208,7 @@ window.addEventListener("load", () => {
       print_seatresult(document.querySelector("#seat-result"),
                        seateditor.getSeatArray(),
                        membereditor.getMembersArray());
+      drag_swap_field(document.querySelector("#view-result"), "seat-cell-result");
       document.querySelector("#view-seatset").style.display = "none";
       document.querySelector("#view-result").style.display = "";
 
