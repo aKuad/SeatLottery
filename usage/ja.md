@@ -12,15 +12,22 @@ GitHub Pages 上で利用できます。こちらへアクセスしてくださ�
 
 ## 2. メンバー入力
 
-以下の記法にしたがって、テキストボックスにメンバー入力を行います。
+メンバー入力を行います。記法は以下の通りです:
 
 ```txt
-番号,氏名,フリガナ,優先席指定 (0 or 1)
+優先席指定 (0 or 1),氏名,フリガナ,番号
+優先席指定 (0 or 1),氏名,番号
+優先席指定 (0 or 1),氏名
+氏名
 ```
+
+優先席指定、フリガナ、番号の入力は任意です。
 
 入力例:
 
-![Screen - Member input](./images-ja/screen-ja-2-member.webp)
+![Screen - Member input](./images-ja/screen-ja-2-member-1.webp)
+
+![Screen - Member input](./images-ja/screen-ja-3-member-2.webp)
 
 フリガナが不要な場合は、以下の形式で記述します。
 
@@ -43,23 +50,26 @@ Note: 番号は、文字列を含んでいても、昇順/降順に並べられ�
 * 未 - 未使用の座席
 * 空 - 座席が配置されていない箇所
 
-![Screen - Seat sample (edit)](./images-ja/screen-ja-3-seatedit.webp)
+![Screen - Seat sample (edit)](./images-ja/screen-ja-4-seatedit.webp)
 
-![Screen - Seat sample (result)](./images-ja/screen-ja-4-seatsample.webp)
+![Screen - Seat sample (result)](./images-ja/screen-ja-5-seatsample.webp)
 
 ## 4. 座席表生成
 
 以下の条件を満たすと、「座席表を生成」ボタンを押せるようになります。
 
-* メンバー入力が正しい記法に沿っている。
-* 座席数に正しい値 (1以上 20以下) が入力されている。
-* メンバー数よりも座席数が上回っている。(一般、優先共に)
+* 座席数に正しい値 (1以上 20以下) が入力されている
+* メンバー数よりも座席数が上回っている (一般、優先共に)
 
-![Screen - Seat table generate](./images-ja/screen-ja-5-generate.webp)
+![Screen - Seat table generate](./images-ja/screen-ja-6-generate.webp)
 
 「座席表を生成」ボタンを押すと、設定された座席表にランダムでメンバーが割り振られた座席表が表示されます。
 
-![Screen - Result](./images-ja/screen-ja-6-result.webp)
+![Screen - Result](./images-ja/screen-ja-7-result.webp)
+
+必要に応じ、ドラッグ&ドロップで席を入れ替えます。
+
+![Screen - Result seat swap](./images-ja/screen-ja-8-result-swap.webp)
 
 必要に応じ、タイトル欄や備考欄に必要事項を入力してください。入力が空のときは、印刷時にフィールドが非表示になります。
 
@@ -71,6 +81,18 @@ Note: 余白は自動調整されないため、必要に応じてブラウザ�
 
 ### 入力自動復元
 
-入力したメンバーと座席情報は、ご利用のブラウザ内に保存され、次回起動時に自動で復元されます。入力を破棄したい場合 (共有 PC のご利用であるなど) は、入力部近くの削除/リセットボタンを押下してください。
+入力したメンバーと座席情報は、ご利用のブラウザ内に保存され、次回起動時に自動で復元されます (プライベートブラウズ使用時はブラウザの仕様により自動で破棄されます)。
 
-![Screen - Input delete/reset](./images-ja/screen-ja-7-result.webp)
+入力を破棄したい場合 (共有 PC のご利用であるなど) は、入力部近くの削除/リセットボタンを押下してください。
+
+![Screen - Input delete/reset](./images-ja/screen-ja-9-input-discard.webp)
+
+Note: プライベートブラウズ使用時は、ブラウザの仕様により自動で破棄されます。
+
+### 前回の結果復元
+
+前回最後に生成した座席表を再表示できます。ブラウザに自動で保存されるため、ブラウザを一度閉じても復元可能です。
+
+結果を破棄したい場合 (共有 PC のご利用であるなど) は、破棄ボタンを押下してください。
+
+Note: プライベートブラウズ使用時は、ブラウザの仕様により自動で破棄されます。
