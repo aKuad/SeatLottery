@@ -34,7 +34,7 @@ function drag_swap_field(target_area, target_class) {
     elem.addEventListener("dragover", ev => {
       ev.preventDefault();
     });
-    elem.addEventListener("drop", ev => {
+    elem.addEventListener("drop", () => {
       const drag_to = elem;
       const dummy = document.createElement("div");
 
