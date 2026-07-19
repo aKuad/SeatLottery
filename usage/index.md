@@ -61,7 +61,7 @@ Click it to view result. Members will be assigned in randomly with following spe
 
 If you need, you can swap seat with drag&drop.
 
-![Screen - Result seat swap](./images-en/screen-en-8-result-swap.gif)
+![Screen - Result seat swap](./images-en/screen-en-8-result-swap.webp)
 
 If you need, please fill title and/or note field. If the field is empty, it will be hidden on printing.
 

@@ -69,7 +69,7 @@ Note: 番号は、文字列を含んでいても、昇順/降順に並べられ�
 
 必要に応じ、ドラッグ&ドロップで席を入れ替えます。
 
-![Screen - Result seat swap](./images-ja/screen-ja-8-result-swap.gif)
+![Screen - Result seat swap](./images-ja/screen-ja-8-result-swap.webp)
 
 必要に応じ、タイトル欄や備考欄に必要事項を入力してください。入力が空のときは、印刷時にフィールドが非表示になります。
 
