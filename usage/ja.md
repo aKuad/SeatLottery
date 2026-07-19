@@ -67,6 +67,10 @@ Note: 番号は、文字列を含んでいても、昇順/降順に並べられ�
 
 ![Screen - Result](./images-ja/screen-ja-7-result.webp)
 
+必要に応じ、ドラッグ&ドロップで席を入れ替えます。
+
+![Screen - Result seat swap](./images-ja/screen-ja-8-result-swap.gif)
+
 必要に応じ、タイトル欄や備考欄に必要事項を入力してください。入力が空のときは、印刷時にフィールドが非表示になります。
 
 ブラウザのページ印刷機能、または「印刷」ボタンから、座席表を印刷することができます。
@@ -81,7 +85,7 @@ Note: 余白は自動調整されないため、必要に応じてブラウザ�
 
 入力を破棄したい場合 (共有 PC のご利用であるなど) は、入力部近くの削除/リセットボタンを押下してください。
 
-![Screen - Input delete/reset](./images-ja/screen-ja-8-input-discard.webp)
+![Screen - Input delete/reset](./images-ja/screen-ja-9-input-discard.webp)
 
 Note: プライベートブラウズ使用時は、ブラウザの仕様により自動で破棄されます。
 

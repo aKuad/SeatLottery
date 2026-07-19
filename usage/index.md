@@ -59,6 +59,10 @@ Click it to view result. Members will be assigned in randomly with following spe
 
 ![Screen - Result](./images-en/screen-en-7-result.webp)
 
+If you need, you can swap seat with drag&drop.
+
+![Screen - Result seat swap](./images-en/screen-en-8-result-swap.gif)
+
 If you need, please fill title and/or note field. If the field is empty, it will be hidden on printing.
 
 You can print the result by browser function or click 'Print'.
@@ -73,7 +77,7 @@ The members and seat layout input will be store on the browser, then restored au
 
 If you want to discard these inputs manually (e.g. using at shared PC), please click 'Delete' / 'Reset' button.
 
-![Screen - Input delete/reset](./images-en/screen-en-8-input-discard.webp)
+![Screen - Input delete/reset](./images-en/screen-en-9-input-discard.webp)
 
 Note: On private browse mode, it will be discarded automatically by browser's specification.
 
